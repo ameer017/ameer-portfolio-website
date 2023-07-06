@@ -27,7 +27,7 @@ const Projects = () => {
 
       <div className='flex-sb --padding'>
         <p>Recent work</p>
-        <a href='#'>View archive <BsFillArrowRightCircleFill/></a>
+        <a href='https://github.com/ameer017'>View archive <BsFillArrowRightCircleFill/></a>
       </div>
     
       <div className='card'>
