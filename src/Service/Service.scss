@@ -1,0 +1,37 @@
+.services {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .logoContainer {
+        background-color: rgba(74, 68, 68, 0.419);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        margin: 0 auto;
+
+            .logo{
+                font-size: 30px;
+                cursor: pointer;
+                color: #fff;
+            }
+    }
+
+    
+    .logo:hover{
+        transform: scale(1.2);
+    }
+
+    .details{
+        background-color: #0a192f;
+        box-shadow: 0 1.2rem 2rem #2e394755;
+        flex-grow: 1;
+        flex-basis: 250px;
+        padding: 0.7rem 1rem;
+    }
+
+}

@@ -1,0 +1,41 @@
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    
+
+    .left {
+        h1{
+            // width: 50%;
+            // font-size: 70px;
+            padding: 0 1.2rem;
+            margin: 0 auto;
+        }
+    }
+
+    .middle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img{
+            width: 300px;
+            opacity: 0.7;
+        }
+    }
+
+    .right {
+        .socials {
+            display: flex;
+            gap: 1.2em;
+            align-items: center;
+
+            a:hover{
+                transform: scale(1.2);
+                transition-duration: 500ms;
+            }
+        }
+    }
+}
