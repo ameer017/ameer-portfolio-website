@@ -40,6 +40,8 @@ h3{
     color: inherit;
     -webkit-transition: all .4s;
     transition: all .4s;
+
+
 }
 
 p{
@@ -70,4 +72,17 @@ a {
 
 .--ta {
   text-align: center;
+}
+
+@media screen and (max-width: 460px) {
+
+  .container {
+  padding: 1.2rem;
+  text-align: center;
+    
+  }
+  h3{
+    /* letter-spacing: 0; */
+    font-size: 30px;
+  }
 }
