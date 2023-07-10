@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import {Navbar, Empty, HeroSection, About, Footer, Projects, Services, Contact,  } from '../index'
 import './App.css'
-import Service from './Service/Service'
 
 function App() {
   const [isLoading, setisLoading] = useState(true)
@@ -9,7 +8,7 @@ function App() {
   useEffect(() => {
       setTimeout(() => {
         setisLoading(false)
-      }, 2000)
+      }, 5000)
   }, [])
 
 

@@ -82,7 +82,10 @@ a {
     
   }
   h3{
-    /* letter-spacing: 0; */
     font-size: 30px;
+  }
+
+  .--padding {
+    padding: 0;
   }
 }

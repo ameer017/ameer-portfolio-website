@@ -12,11 +12,12 @@ const HeroSection = () => {
             </div>
 
             <div className='hero-info flex-start'>
+              <span>⚐ UI/UX</span>
               <span>⚐ Javascript</span>
               <span>⚐ React.js</span>
               <span>⚐ Node.js</span>
+              <span>⚐ Express.js</span>
               <span>⚐ MongoDb</span>
-              <span>⚐ UI/UX</span>
             </div>        
       </section>
 

@@ -72,7 +72,7 @@ const Contact = () => {
             <input type="email" name="email" value={formValue.email} onChange={handleValidation} placeholder='Email'/>
               <span>{formError.email}</span>
           </div>
-            <textarea name='message' placeholder='message..' value={formValue.message} onChange={handleValidation} rows='10'/>
+            <textarea name='message' placeholder='message..' value={formValue.message} onChange={handleValidation} rows='6'/>
               <span>{formError.message}</span>
           
           <br/>
