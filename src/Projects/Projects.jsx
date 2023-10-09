@@ -6,6 +6,8 @@ import {BsFillArrowRightCircleFill} from 'react-icons/bs'
 import {SiNetlify} from 'react-icons/si'
 
 const projects = [
+  {name: 'AVOCET - ReFi Solution', githubLink: 'https://github.com/ameer017/avocet-frontend', liveLink: 'https://avocet-frontend.vercel.app/', image: 'https://images.pexels.com/photos/3735215/pexels-photo-3735215.jpeg?auto=compress&cs=tinysrgb&w=600'},
+
   {name: 'Currency Converter App', githubLink: 'https://github.com/ameer017/currencyConverter', liveLink: 'https://currencyexchangeconverter.netlify.app/', image: 'https://images.pexels.com/photos/4386158/pexels-photo-4386158.jpeg?auto=compress&cs=tinysrgb&w=400'},
 
   {name: 'Country Data App', githubLink: 'https://github.com/ameer017/countryinfo', liveLink: 'https://whole-country-info.netlify.app/', image: 'https://images.pexels.com/photos/7412095/pexels-photo-7412095.jpeg?auto=compress&cs=tinysrgb&w=400'},

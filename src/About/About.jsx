@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.scss';
 import picture from '../../src/assets/picture.jpg'
-import {AiOutlineTwitter, AiOutlineInstagram, AiFillGithub} from 'react-icons/ai'
+import {AiOutlineTwitter, AiOutlineInstagram, AiFillGithub, AiFillMediumCircle} from 'react-icons/ai'
 
 const About = () => {
   return (
@@ -16,7 +16,7 @@ const About = () => {
         </div>
 
         <div className='right'>
-          <p>Hello! My name is Raji Abdullahi Al Ameer and i enjoy creating things that lives on the web.
+          <p>Hello! My name is Raji Abdullahi Al Ameer.
           I'm a passionate software developer with a strong foundation in creating innovative and efficient solutions. With 1 year of experience in the field, I have honed my skills in javascript programming language, frameworks, and development methodologies.</p>
 
           <div className='socials'>
@@ -31,6 +31,9 @@ const About = () => {
             </a>
             <a href="https://twitter.com/alAmeer170">
                 <AiOutlineTwitter size={18}/>
+            </a>
+            <a href="https://medium.com/@rajiabdullahi907">
+                <AiFillMediumCircle size={18}/>
             </a>
 
           </div>
