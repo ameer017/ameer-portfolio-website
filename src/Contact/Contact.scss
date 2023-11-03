@@ -39,6 +39,7 @@
 
     input:hover, textarea:hover {
         outline: 1px solid white;
+        transition-duration: 900ms;
     }
     
     .--center{
