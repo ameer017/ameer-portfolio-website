@@ -12,7 +12,7 @@ const list = [
 
   {id: 'UI/UX', info: 'My design process involves extensive research, wire framing, prototyping, and iterative testing to ensure that the final product meets user needs and business goals. By combining my creative skills with user insights, I strive to craft meaningful and delightful experiences that resonate with users..', logo: <VscSymbolInterface/>}, 
 
-  {id: 'Branding', info: 'I specialize in helping businesses and individuals create and establish a strong brand identity that resonates with their target audience. With a keen understanding of market trends and consumer behavior, I work closely with my clients to develop comprehensive branding strategies that elevate their presence in the market. My goal is to effectively communicate their unique value proposition, enhance their brand image, and ultimately drive their business growth.', logo: <RiPencilRuler2Fill/>}, 
+  {id: 'Branding', info: 'I specialize in helping businesses and individuals create and establish a strong brand identity that resonates with their target audience. With a keen understanding of market trends and consumer behavior. I work closely with my clients to develop comprehensive branding strategies that elevate their presence in the market. My goal is to effectively communicate their unique value proposition, enhance their brand image, and ultimately drive their business growth.', logo: <RiPencilRuler2Fill/>}, 
 ]
 
 const Service = () => {
