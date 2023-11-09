@@ -3,11 +3,11 @@ import {Navbar, Empty, HeroSection, About, Footer, Projects, Services, Contact, 
 import './App.css'
 
 function App() {
-  const [isLoading, setisLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
       setTimeout(() => {
-        setisLoading(false)
+        setIsLoading(false)
       }, 5000)
   }, [])
 
