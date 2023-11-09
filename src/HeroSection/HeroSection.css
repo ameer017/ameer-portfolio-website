@@ -1,0 +1,22 @@
+.heroContainer {
+  flex-wrap: wrap;
+}
+.heroContainer span {
+  color: #fff;
+}
+.heroContainer a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  background-image: linear-gradient(to right, gray, #0a192f, gray);
+  transform-origin: bottom center;
+  transition: transform 0.25s ease;
+}
+.heroContainer a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
+}/*# sourceMappingURL=HeroSection.css.map */

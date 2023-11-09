@@ -1,0 +1,30 @@
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+.about .left h1 {
+  padding: 0 1.2rem;
+  margin: 0 auto;
+}
+.about .middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about .middle img {
+  width: 300px;
+  opacity: 0.7;
+}
+.about .right .socials {
+  display: flex;
+  gap: 1.2em;
+  align-items: center;
+}
+.about .right .socials a:hover {
+  transform: scale(1.2);
+  transition-duration: 500ms;
+  color: brown;
+}/*# sourceMappingURL=About.css.map */
