@@ -7,8 +7,9 @@ const HeroSection = () => {
       <section className='heroContainer container'>
             <div className='hero-text'>
               <h1>Hi, my name is Abdullah Raji Al Ameer.</h1>
+              <small>Alumni <a href="https://twitter.com/dlt-africa">DLTAfrica.</a></small>
 
-              <p>I'm a software developer, specializing in building (and occasionally designing) exceptional digital experiences. I'm an alumni of <a href="https://twitter.com/dlt-africa">DLTAfrica.</a></p>
+              <p>I'm a software developer, specializing in building (and occasionally designing) exceptional digital experiences.</p>
             </div>
 
             <div className='hero-info flex-start'>
