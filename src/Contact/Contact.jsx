@@ -62,6 +62,7 @@ const Contact = () => {
           <div>
             <label>EMAIL:</label>
             <p>rajiabdullahi907@gmail.com</p>
+            <p>rajiabdullahi907@yahoo.com</p>
           </div>
         </div>
 
