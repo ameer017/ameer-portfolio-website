@@ -16,7 +16,7 @@ const About = () => {
         </div>
 
         <div className='right'>
-          <p>Hello! My name is Raji Abdullahi Al Ameer.
+          <p>Hello! My name is Abdullahi Raji Al Ameer.
           I'm a passionate software developer with a strong foundation in creating innovative and efficient solutions. With 1 year of experience in the field, I have honed my skills in javascript programming language, frameworks, and development methodologies.</p>
 
           <div className='socials'>
