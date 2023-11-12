@@ -41,7 +41,7 @@ const projects = [
   {
     name: "Quran Recitation App",
     githubLink: "https://github.com/ameer017/myquranaudioapp",
-    liveLink: "https://app.netlify.com/sites/appquranaudio/",
+    liveLink: "https://myquranaudioapp.vercel.app/",
     image:
       "https://images.pexels.com/photos/7249294/pexels-photo-7249294.jpeg?auto=compress&cs=tinysrgb&w=400",
   },
@@ -49,7 +49,7 @@ const projects = [
   {
     name: "Food Recipe App",
     githubLink: "https://github.com/ameer017/foodrecipee",
-    liveLink: "https://app.netlify.com/sites/foodrecipeee/",
+    liveLink: "https://foodrecipeee.netlify.app/",
     image:
       "https://images.pexels.com/photos/5966431/pexels-photo-5966431.jpeg?auto=compress&cs=tinysrgb&w=400",
   },
@@ -57,7 +57,7 @@ const projects = [
   {
     name: "Rock-Paper-Scissors App",
     githubLink: "https://github.com/ameer017/rock-paper-scissors",
-    liveLink: "https://app.netlify.com/sites/symphonious-smakager-c6b71b/",
+    liveLink: "https://symphonious-smakager-c6b71b.netlify.app/",
     image:
       "https://images.pexels.com/photos/4464438/pexels-photo-4464438.jpeg?auto=compress&cs=tinysrgb&w=400",
   },
