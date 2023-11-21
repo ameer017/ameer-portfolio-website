@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import {Navbar, Empty, HeroSection, About, Footer, Projects, Services, Contact,  } from '../index'
+import {Navbar, Empty, HeroSection, About, Footer, Projects, Services, Contact } from '../index'
 import './App.css'
 
 function App() {
