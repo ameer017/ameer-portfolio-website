@@ -8,7 +8,7 @@ import {VscSymbolInterface} from 'react-icons/vsc'
 const list = [
   {id: 'Web Design', info: 'I am skilled in designing and developing websites using various programming languages and design tools. I am constantly staying updated with the latest trends and technologies in web design to ensure that my clients receive the most innovative and effective solutions.', logo: <HiColorSwatch/>}, 
 
-  {id: 'Development', info: 'With my strong foundation in markup and programming language, such as HTML, CSS, and JavaScript, I can -develop, build and maintain- websites and web applications and as well create the structure, layout, and interactivity of a website. I also work with server-side technologies, databases, and APIs to ensure the website functions properly and interacts with users and other systems.', logo: <FaConnectdevelop/>}, 
+  {id: 'Development', info: 'With my strong foundation in markup and programming language such as HTML, CSS and JavaScript. I can develop, build and maintain websites and web applications and as well create the structure, layout, and interactivity of a website. I also work with server-side technologies, databases, and APIs to ensure the website functions properly and interacts with users and other systems.', logo: <FaConnectdevelop/>}, 
 
   {id: 'UI/UX', info: 'My design process involves extensive research, wire framing, prototyping, and iterative testing to ensure that the final product meets user needs and business goals. By combining my creative skills with user insights, I strive to craft meaningful and delightful experiences that resonate with users..', logo: <VscSymbolInterface/>}, 
 
