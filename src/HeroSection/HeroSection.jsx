@@ -6,18 +6,16 @@ const HeroSection = () => {
     <>
       <section className='heroContainer container'>
             <div className='hero-text'>
-              <h1>Hi, my name is Abdullah Raji Al Ameer.</h1>
+              <h1>Abdullah Raji Al Ameer.</h1>
               <small>Alumni <a href="https://twitter.com/dlt-africa">DLTAfrica.</a></small>
 
               <p>I'm a software developer, specializing in building (and occasionally designing) exceptional digital experiences.</p>
             </div>
 
             <div className='hero-info flex-start'>
-              <span>⚐ UI/UX</span>
               <span>⚐ Javascript</span>
               <span>⚐ React.js</span>
-              <span>⚐ Node.js</span>
-              <span>⚐ Express.js</span>
+              <span>⚐ Node.js/Express.js</span>
               <span>⚐ MongoDb</span>
               <span>⚐ Solidity</span>
             </div>        
