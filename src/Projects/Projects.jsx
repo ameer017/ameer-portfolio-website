@@ -55,7 +55,7 @@ const projects = [
   },
 
   {
-    name: "Rock-Paper-Scissors App",
+    name: "Rock-Paper-Scissors App(clone)",
     githubLink: "https://github.com/ameer017/rock-paper-scissors",
     liveLink: "https://symphonious-smakager-c6b71b.netlify.app/",
     image:
