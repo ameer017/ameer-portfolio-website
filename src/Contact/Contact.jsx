@@ -47,17 +47,18 @@ const Contact = () => {
 
   return (
     <section className='container' id='contact'>
-      <h3 className='--ta'>Contact Us</h3>
+      <h3 className='--ta'>Contact</h3>
 
       <div className='contact'>
         <div>
           <div>
             <label>PHONE:</label>
-            <p>+234 8142793892</p>
+            <p>(+234) 8142793892</p>
+            <p>(+234) 8035269864</p>
           </div>
           <div>
             <label>ADDRESS:</label>
-            <p>NO 5, ODENIYI CLOSE - OKO FILLING, OFF AIT ROAD <br/> KOLA B/STOP, LAGOS STATE, NIGERIA.</p>
+            <p>NO 5, ODENIYI CLOSE - OKO FILLING, OFF AIT ROAD KOLA B/STOP, LAGOS STATE, NIGERIA.</p>
           </div>
           <div>
             <label>EMAIL:</label>
