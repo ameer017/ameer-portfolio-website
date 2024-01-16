@@ -1,6 +1,6 @@
 /* Navbar.scss */
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -9,8 +9,8 @@
 }
 
 .navbar {
-  background-color: #0a192f;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   height: 60px;
   display: flex;
   align-items: center;
@@ -31,7 +31,14 @@
   font-size: 2rem;
   font-weight: 700;
   text-decoration: none;
-  color: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.icon {
+  color: #000;
 }
 
 .navbar-links {
@@ -42,7 +49,7 @@
 }
 
 .navbar-links a {
-  color: #fff;
+  color: #000;
   text-decoration: none;
   margin: 0 15px;
   font-size: 15px;
@@ -62,7 +69,7 @@
   padding-inline: 8px;
   border-radius: 5px;
   text-decoration: none;
-  color: white;
+  color: #000;
 }
 
 .navbar-toggle {
@@ -73,18 +80,19 @@
 .bar {
   display: block;
   width: 25px;
-  height: 3px;
+  height: 1px;
   background-color: #fff;
   margin: 5px 0;
   transition: background-color 0.3s ease-in-out;
 }
 
 @media screen and (max-width: 768px) {
-  .navbar-links {
+  .navbar-links, .btn {
     display: none;
   }
   .navbar-toggle {
     display: block;
+    background-color: #000;
   }
   .active {
     display: flex;
@@ -96,7 +104,7 @@
     height: 50vh;
     padding: 20px;
     text-align: center;
-    background-color: #0a192f;
+    background-color: #fff;
   }
   .active a {
     margin: 10px 0;
