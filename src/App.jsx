@@ -14,19 +14,19 @@ function App() {
 
   return (
     <div className="App">
-      {isLoading ? (
-      <Empty />
-    ) : (
+      {/* {isLoading ? ( */}
+      {/* <Empty /> */}
+    {/* ) : ( */}
       <>
         <Navbar />  
-        <HeroSection/>
+        {/* <HeroSection/>
         <About/>
         <Services/>
         <Projects/>
         <Contact/>
-        <Footer/>
+        <Footer/> */}
       </>      
-    )}
+    {/* )} */}
     </div>
   )
 }
