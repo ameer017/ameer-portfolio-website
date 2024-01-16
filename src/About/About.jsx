@@ -1,6 +1,5 @@
 import React from 'react';
 import './About.scss';
-import picture from '../../src/assets/picture.jpg'
 import {AiOutlineTwitter, AiOutlineInstagram, AiFillGithub, AiFillMediumCircle} from 'react-icons/ai'
 
 const About = () => {
@@ -8,12 +7,9 @@ const About = () => {
     <section className='container' id='about'>
       <div className='about'>
         <div className='left'>
-          <h3>About Me</h3>
+          <h3>What I do.</h3>
         </div>
 
-        <div className='middle'>
-          <img src={picture} alt='about-image'/>
-        </div>
 
         <div className='right'>
           <p>Hello! My name is Abdullahi Raji Al Ameer.

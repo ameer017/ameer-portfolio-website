@@ -7,14 +7,12 @@ const HeroSection = () => {
       <section className='heroContainer container'>
             <div className='hero-text container'>
               <h1>Abdullah Raji Al Ameer.</h1>
-              {/* <small>Alumni <a href="https://twitter.com/dlt-africa">DLTAfrica.</a></small> */}
-
-              <p>I design and build exceptional products</p>
+              <p>I specialize in the artful conception and meticulous construction of outstanding products. By leveraging my skills in design and development, I craft solutions that not only meet but exceed expectations.</p>
             </div>
 
-            <div>
-              <img src=''/>
-            </div>
+              <img src='/public/IMG_20220319_102711_109~2.jpg' width={250}/>
+
+              
       </section>
 
     </>
