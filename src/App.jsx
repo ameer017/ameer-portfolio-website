@@ -19,12 +19,12 @@ function App() {
     {/* ) : ( */}
       <>
         <Navbar />  
-        {/* <HeroSection/>
-        <About/>
-        <Services/>
-        <Projects/>
-        <Contact/>
-        <Footer/> */}
+        <HeroSection/>
+        {/* <About/> */}
+        {/* <Services/> */}
+        {/* <Projects/> */}
+        {/* <Contact/> */}
+        {/* <Footer/> */}
       </>      
     {/* )} */}
     </div>

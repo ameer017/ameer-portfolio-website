@@ -5,7 +5,6 @@
   gap: 2rem;
 }
 .services .logoContainer {
-  background-color: rgba(74, 68, 68, 0.419);
   width: 50px;
   height: 50px;
   display: flex;
@@ -18,9 +17,15 @@
   font-size: 30px;
   cursor: pointer;
   color: #fff;
+  animation: fallAnimation 5s ease-in-out infinite 1s, rotateAnimation 1.5s linear infinite;
 }
 .services .logo:hover {
+  transition: all 600ms;
   transform: scale(1.2);
+  -webkit-transition: all 600ms;
+  -moz-transition: all 600ms;
+  -ms-transition: all 600ms;
+  -o-transition: all 600ms;
 }
 .services .details {
   background-color: #0a192f;
@@ -28,4 +33,10 @@
   flex-grow: 1;
   flex-basis: 250px;
   padding: 0.7rem 1rem;
+}
+
+@keyframes rotateAnimation {
+  100% {
+    transform: rotate(360deg);
+  }
 }/*# sourceMappingURL=Service.css.map */

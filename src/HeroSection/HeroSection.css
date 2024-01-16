@@ -1,8 +1,9 @@
 .heroContainer {
-  flex-wrap: wrap;
-}
-.heroContainer span {
-  color: #fff;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .heroContainer a:after {
   content: "";
