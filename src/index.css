@@ -16,6 +16,11 @@
 
   scroll-padding-top: 7rem;
   scroll-behavior: smooth;
+
+  @media  screen and (max-width: 760px) {
+    color: brown;
+  background-color: burlywood;
+  }
 }
 
 .container {
@@ -37,8 +42,6 @@ h3{
     color: inherit;
     -webkit-transition: all .4s;
     transition: all .4s;
-
-
 }
 
 p{

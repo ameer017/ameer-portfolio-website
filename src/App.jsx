@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import {Navbar, Empty, HeroSection, About, Footer, Projects, Services, Contact } from '../index'
 import './App.css'
+import Featured from './Featured/Featured'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -20,7 +21,8 @@ function App() {
       <>
         <Navbar />  
         <HeroSection/>
-        {/* <About/> */}
+        <Featured/>
+        <About/>
         {/* <Services/> */}
         {/* <Projects/> */}
         {/* <Contact/> */}

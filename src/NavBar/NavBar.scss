@@ -92,13 +92,20 @@
   
   
   @media screen and (max-width: 768px) {
+    .navbar {
+      background-color: brown;
+    }
+
+    .navbar-logo, .icon {
+      color: burlywood;
+    }
     .navbar-links, .btn{
       display: none;
     }
   
     .navbar-toggle {
       display: block;
-      background-color: #000;
+      background-color: burlywood;
     
     }
   
@@ -108,11 +115,11 @@
       position: absolute;
       top: 60px;
       left: 0;
-      width: 100%;
+      width: 93.9%;
       height: 50vh;
       padding: 20px;
       text-align: center;
-      background-color: #fff;
+      background-color: burlywood;
     }
   
     .active a {
