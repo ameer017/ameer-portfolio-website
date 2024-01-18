@@ -8,28 +8,47 @@
   .hero-text {
     width: 50%;
     text-wrap: wrap;
+    
 
     @media screen and (max-width: 770px) {
       width: 100%;
     }
-  }
-  a:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 1px;
-    bottom: -4px;
-    left: 0;
-    background-image: linear-gradient(to right, gray, #0a192f, gray);
-    transform-origin: bottom center;
-    transition: transform 0.25s ease;
-  }
 
-  a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom center;
+    .socials {
+      font-size: 20px;
+      display: flex;
+      gap: 1.2em;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        color: black;
+      }
+
+      a:hover {
+        transform: scale(1.2);
+        transition-duration: 500ms;
+        color: brown;
+      }
+    }
   }
+  // a:after {
+  //   content: "";
+  //   position: absolute;
+  //   width: 100%;
+  //   transform: scaleX(0);
+  //   height: 1px;
+  //   bottom: -4px;
+  //   left: 0;
+  //   background-image: linear-gradient(to right, gray, #0a192f, gray);
+  //   transform-origin: bottom center;
+  //   transition: transform 0.25s ease;
+  // }
+
+  // a:hover::after {
+  //   transform: scaleX(1);
+  //   transform-origin: bottom center;
+  // }
 
   img {
     object-fit: cover;

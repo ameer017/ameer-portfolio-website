@@ -1,3 +1,22 @@
+mark {
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  font-family: Handlee;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @media  screen and (max-width: 768px) {
+    color: burlywood;
+  background-color: brown;
+  }
+}
+#about {
+
+  padding: 0 6em;
+}
 .about {
   display: flex;
   align-items: center;
@@ -5,40 +24,26 @@
   gap: 1.2rem;
   flex-wrap: wrap;
 
-  .left {
-    h1 {
-      padding: 0 1.2rem;
-      margin: 0 auto;
-    }
-  }
 
-  .middle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .element {
 
-    img {
-      width: 300px;
-      opacity: 0.5;
-      border-radius: 15px;
-      -webkit-border-radius: 15px;
-      -moz-border-radius: 15px;
-      -ms-border-radius: 15px;
-      -o-border-radius: 15px;
-    }
-  }
-
-  .right {
-    .socials {
+    .el_one  {
       display: flex;
-      gap: 1.2em;
+      gap: 2rem;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
 
-      a:hover {
-        transform: scale(1.2);
-        transition-duration: 500ms;
-        color: brown;
+      div {
+        border: 1px solid;
+        padding: 4rem;
+        text-align: center;
+
+        span {
+          font-size: 30px;
+        }
       }
     }
+    
   }
 }
