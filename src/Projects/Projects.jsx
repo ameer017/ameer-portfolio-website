@@ -1,8 +1,6 @@
 import React from "react";
 import "./Projects.scss";
-import picture from "../assets/picture.jpg";
 import { AiFillGithub } from "react-icons/ai";
-import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { SiNetlify } from "react-icons/si";
 
 const projects = [
@@ -22,22 +20,7 @@ const projects = [
       "https://images.pexels.com/photos/4386158/pexels-photo-4386158.jpeg?auto=compress&cs=tinysrgb&w=400",
   },
 
-  {
-    name: "Country Data App",
-    githubLink: "https://github.com/ameer017/countryinfo",
-    liveLink: "https://whole-country-info.netlify.app/",
-    image:
-      "https://images.pexels.com/photos/7412095/pexels-photo-7412095.jpeg?auto=compress&cs=tinysrgb&w=400",
-  },
-
-  {
-    name: "Weather Forecast App",
-    githubLink: "https://github.com/ameer017/newweather",
-    liveLink: "https://weathernewapp.netlify.app/",
-    image:
-      "https://images.pexels.com/photos/4951280/pexels-photo-4951280.jpeg?auto=compress&cs=tinysrgb&w=400",
-  },
-
+  
   {
     name: "Quran Recitation App",
     githubLink: "https://github.com/ameer017/myquranaudioapp",
@@ -54,25 +37,22 @@ const projects = [
       "https://images.pexels.com/photos/5966431/pexels-photo-5966431.jpeg?auto=compress&cs=tinysrgb&w=400",
   },
 
-  {
-    name: "Rock-Paper-Scissors App(clone)",
-    githubLink: "https://github.com/ameer017/rock-paper-scissors",
-    liveLink: "https://symphonious-smakager-c6b71b.netlify.app/",
-    image:
-      "https://images.pexels.com/photos/4464438/pexels-photo-4464438.jpeg?auto=compress&cs=tinysrgb&w=400",
-  },
+  
 ];
 const Projects = () => {
   return (
     <section className="container" id="projects">
-      <h3 className="--ta">Projects</h3>
+      <div>
+        <small>
+          <mark>Featured Projects.</mark>
+        </small>
 
-      <div className="flex-sb --padding">
-        <p>Recent work</p>
-        <a href="https://github.com/ameer017">
-          View archive <BsFillArrowRightCircleFill />
-        </a>
+        <p>I Have worked on more than <b>3</b> projects.</p>
+
+        
       </div>
+
+    
 
       <div className="card">
         {projects.map(({ name, liveLink, githubLink, image }) => (

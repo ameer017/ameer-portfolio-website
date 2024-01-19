@@ -23,8 +23,8 @@ function App() {
         <HeroSection/>
         <Featured/>
         <About/>
+        <Projects/>
         {/* <Services/> */}
-        {/* <Projects/> */}
         {/* <Contact/> */}
         {/* <Footer/> */}
       </>      
