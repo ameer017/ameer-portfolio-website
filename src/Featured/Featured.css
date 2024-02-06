@@ -1,0 +1,16 @@
+.featured {
+  background: #000;
+  color: #fff;
+  padding: 0 8em;
+}
+@media screen and (max-width: 800px) {
+  .featured {
+    padding: 0 2em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .featured {
+    color: burlywood;
+    background-color: brown;
+  }
+}/*# sourceMappingURL=Featured.css.map */

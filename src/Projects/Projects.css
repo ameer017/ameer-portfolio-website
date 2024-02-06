@@ -1,21 +1,17 @@
-.--padding {
-  padding: 0 8rem;
-}
-
 .card {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
+  gap: 2rem;
 }
 .card .imageContainer {
   position: relative;
 }
 .card .first {
-  width: 250px;
-  height: 300px;
-  opacity: 1;
+  width: 200px;
+  height: 250px;
   margin: 5px;
   backface-visibility: hidden;
   border-radius: 5px;
@@ -24,6 +20,9 @@
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   opacity: 0.7;
+  margin: 1.2px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .card .first:hover {
   opacity: 0.4;
@@ -43,7 +42,7 @@
   flex-direction: column;
 }
 .card .middle p {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 .card .middle .logo {
   display: flex;
@@ -62,4 +61,17 @@
 }
 .card .imageContainer:hover .middle {
   opacity: 1;
+}
+
+#projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10rem;
+}
+@media screen and (max-width: 990px) {
+  #projects {
+    flex-direction: column;
+    text-align: center;
+  }
 }/*# sourceMappingURL=Projects.css.map */

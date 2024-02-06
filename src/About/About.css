@@ -1,3 +1,24 @@
+mark {
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  font-family: Handlee;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+@media screen and (max-width: 768px) {
+  mark {
+    color: burlywood;
+    background-color: brown;
+  }
+}
+
+#about {
+  padding: 0 6em;
+}
+
 .about {
   display: flex;
   align-items: center;
@@ -5,31 +26,18 @@
   gap: 1.2rem;
   flex-wrap: wrap;
 }
-.about .left h1 {
-  padding: 0 1.2rem;
-  margin: 0 auto;
-}
-.about .middle {
+.about .element .el_one {
   display: flex;
+  gap: 2rem;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
 }
-.about .middle img {
-  width: 300px;
-  opacity: 0.5;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
+.about .element .el_one div {
+  border: 1px solid;
+  padding: 4rem;
+  text-align: center;
 }
-.about .right .socials {
-  display: flex;
-  gap: 1.2em;
-  align-items: center;
-}
-.about .right .socials a:hover {
-  transform: scale(1.2);
-  transition-duration: 500ms;
-  color: brown;
+.about .element .el_one div span {
+  font-size: 30px;
 }/*# sourceMappingURL=About.css.map */

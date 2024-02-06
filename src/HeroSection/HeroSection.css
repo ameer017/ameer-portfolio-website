@@ -1,23 +1,40 @@
 .heroContainer {
-  border: 2px solid;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  flex-wrap: wrap;
 }
-.heroContainer a:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1px;
-  bottom: -4px;
-  left: 0;
-  background-image: linear-gradient(to right, gray, #0a192f, gray);
-  transform-origin: bottom center;
-  transition: transform 0.25s ease;
+.heroContainer .hero-text {
+  width: 50%;
+  text-wrap: wrap;
 }
-.heroContainer a:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom center;
+@media screen and (max-width: 770px) {
+  .heroContainer .hero-text {
+    width: 100%;
+  }
+}
+.heroContainer .hero-text .socials {
+  font-size: 20px;
+  display: flex;
+  gap: 1.2em;
+  align-items: center;
+  justify-content: center;
+}
+.heroContainer .hero-text .socials a {
+  color: black;
+}
+.heroContainer .hero-text .socials a:hover {
+  transform: scale(1.2);
+  transition-duration: 500ms;
+  color: brown;
+}
+.heroContainer img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
 }/*# sourceMappingURL=HeroSection.css.map */
