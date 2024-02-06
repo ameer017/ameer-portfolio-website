@@ -57,7 +57,7 @@ const Projects = () => {
       <div className="card">
         {projects.map(({ name, liveLink, githubLink, image }) => (
           <div className="imageContainer">
-            <img src={image} alt="equilibrium" className="first" />
+            <img src={image} alt="project" className="first" />
 
             <div className="middle">
               <p>{name}</p>

@@ -25,10 +25,10 @@ function App() {
         <Featured/>
         <About/>
         <Projects/>
-        <Experience/>
-        {/* <Services/> */}
-        {/* <Contact/> */}
-        {/* <Footer/> */}
+        {/* <Experience/> */}
+        <Services/>
+        <Contact/>
+        <Footer/>
       </>      
     {/* )} */}
     </div>

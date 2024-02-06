@@ -8,6 +8,7 @@ const lists = [
   // { tag: "Color Mode", id: "#color-mode", isColorMode: true },
   { tag: "About", id: "#about" },
   { tag: "Projects", id: "#projects" },
+  { tag: "Services", id: "#services" },
   { tag: "Contact Me", id: "#contact" },
 ];
 

@@ -6,7 +6,7 @@ import { TbFileDatabase } from "react-icons/tb";
 import { GiWebSpit } from "react-icons/gi";
 
 const elements = [
-  { id: 1, details: "UI & Product Design", heading: <FaEye /> },
+  { id: 1, details: "UI | UX Product Design", heading: <FaEye /> },
   { id: 2, details: "Web App Development", heading: <GiWebSpit /> },
   { id: 3, details: "Database Management", heading: <TbFileDatabase /> },
 ];
