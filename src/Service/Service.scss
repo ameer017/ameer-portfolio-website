@@ -5,7 +5,6 @@
   gap: 2rem;
 
   .logoContainer {
-    // background-color: rgba(74, 68, 68, 0.419);
     width: 50px;
     height: 50px;
     display: flex;
@@ -17,10 +16,12 @@
     .logo {
       font-size: 30px;
       cursor: pointer;
-      color: #fff;
-
-      animation: fallAnimation 5s ease-in-out infinite 1s,
-        rotateAnimation 1.5s linear infinite;
+      color: #000000;
+      @media  screen and (max-width: 760px) {
+        color: brown;
+      background-color: burlywood;
+    
+      }
     }
   }
 
@@ -34,7 +35,6 @@
   }
 
   .details {
-    background-color: #0a192f;
     box-shadow: 0 1.2rem 2rem #2e394755;
     flex-grow: 1;
     flex-basis: 250px;
@@ -42,8 +42,3 @@
   }
 }
 
-@keyframes rotateAnimation {
-  100% {
-    transform: rotate(360deg);
-  }
-}

@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap");
 :root {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   line-height: 1.5;
   font-weight: 500;
 
@@ -17,9 +17,9 @@
   scroll-padding-top: 7rem;
   scroll-behavior: smooth;
 
-  @media  screen and (max-width: 760px) {
+  @media screen and (max-width: 760px) {
     color: brown;
-  background-color: burlywood;
+    background-color: burlywood;
   }
 }
 
@@ -33,18 +33,17 @@ h1 {
   font-weight: 900;
 }
 
-
-h3{
+h3 {
   font-size: 50px;
-    font-weight: 800;
-    font-family: Space Grotesk;
-    letter-spacing: 2px;
-    color: inherit;
-    -webkit-transition: all .4s;
-    transition: all .4s;
+  font-weight: 800;
+  font-family: Space Grotesk;
+  letter-spacing: 2px;
+  color: inherit;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
-p{
+p {
   font-size: 18px;
   font-weight: 400;
 }
@@ -75,13 +74,11 @@ a {
 }
 
 @media screen and (max-width: 460px) {
-
   .container {
-  padding: 1.2rem;
-  text-align: center;
-    
+    padding: 1.2rem;
+    text-align: center;
   }
-  h3{
+  h3 {
     font-size: 30px;
   }
 
