@@ -16,9 +16,9 @@ function App() {
 
   return (
     <div className="App">
-      {/* {isLoading ? ( */}
-      {/* <Empty /> */}
-    {/* ) : ( */}
+      {isLoading ? (
+      <Empty />
+    ) : (
       <>
         <Navbar />  
         <HeroSection/>
@@ -30,7 +30,7 @@ function App() {
         <Contact/>
         <Footer/>
       </>      
-    {/* )} */}
+    )}
     </div>
   )
 }

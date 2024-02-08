@@ -17,10 +17,9 @@
       font-size: 30px;
       cursor: pointer;
       color: #000000;
-      @media  screen and (max-width: 760px) {
+      @media screen and (max-width: 760px) {
         color: brown;
-      background-color: burlywood;
-    
+        background-color: burlywood;
       }
     }
   }
@@ -35,10 +34,9 @@
   }
 
   .details {
-    box-shadow: 0 1.2rem 2rem #2e394755;
+    // box-shadow: 0 1.2rem 2rem #2e394755;
     flex-grow: 1;
     flex-basis: 250px;
     padding: 0.7rem 1rem;
   }
 }
-

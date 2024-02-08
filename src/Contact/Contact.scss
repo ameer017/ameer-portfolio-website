@@ -23,9 +23,13 @@
       font-size: 15px;
       background: none;
       transition-duration: 500ms;
+
+      @media screen and (max-width: 760px) {
+        border: 1px solid brown;
+      }
     }
   }
-  
+
   textarea {
     padding: 0.5rem 1rem;
     width: 300px;
@@ -36,6 +40,16 @@
     margin-bottom: 15px;
     background: none;
     transition-duration: 500ms;
+
+    @media screen and (max-width: 760px) {
+      border: 1px solid brown;
+    }
+  }
+
+  :is(input::placeholder, textarea::placeholder) {
+    @media screen and (max-width: 760px) {
+      color: brown;
+    }
   }
 
   :is(input:hover, textarea:hover) {
