@@ -63,8 +63,13 @@
   
   .navbar-links a:hover, .btn:hover {
     color: #878080;
-    transition-duration: 500ms;
-  }
+    transition-duration: 600ms;
+    transform: translateY(-2px);
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -o-transform: translateY(-2px);
+}
   
   .btn {
     border: 1px solid;
@@ -74,6 +79,8 @@
     text-decoration: none;
     color: #000;
   }
+
+  
 
   .navbar-toggle {
     display: none;

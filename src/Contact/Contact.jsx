@@ -4,7 +4,6 @@ import { BsTelephone } from "react-icons/bs";
 import { RxHome } from "react-icons/rx";
 import { CiMail } from "react-icons/ci";
 
-
 const Contact = () => {
   const [formValue, setFormValue] = useState({
     name: "",
@@ -70,7 +69,9 @@ const Contact = () => {
           </div>
 
           <div>
-            <label><RxHome /> &nbsp; ADDRESS:</label>
+            <label>
+              <RxHome /> &nbsp; ADDRESS:
+            </label>
             <address>
               NO 5, ODENIYI CLOSE - OKO FILLING, OFF AIT ROAD KOLA B/STOP, LAGOS
               STATE, NIGERIA.
@@ -78,7 +79,7 @@ const Contact = () => {
           </div>
 
           <div>
-            <label>EMAIL: &nbsp; <CiMail /></label>
+            <label>EMAIL:</label>
             <p>rajiabdullahi907@gmail.com</p>
             <p>rajiabdullahi907@yahoo.com</p>
           </div>

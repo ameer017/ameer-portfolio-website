@@ -9,6 +9,7 @@ const elements = [
   { id: 1, details: "UI | UX Product Design", heading: <FaEye /> },
   { id: 2, details: "Web App Development", heading: <GiWebSpit /> },
   { id: 3, details: "Database Management", heading: <TbFileDatabase /> },
+  { id: 4, details: "Smart Contract Dev.", heading: <TbFileDatabase /> },
 ];
 
 const About = () => {
@@ -19,7 +20,7 @@ const About = () => {
       </small>
       <div className="about">
         <p>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I'm a passionate software
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I'm a passionate software
           developer with a strong foundation in creating innovative and
           efficient solutions. With 1 year of experience in the field, I have
           honed my skills in javascript programming language, frameworks, and
