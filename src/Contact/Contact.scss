@@ -1,10 +1,20 @@
 .contact {
   display: flex;
-  gap: 5rem;
+  gap: 2rem;
   padding: 0 3rem;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+
+  @media screen and (max-width: 860px) {
+    flex-direction: column-reverse;
+
+    .texts__ {
+      border: 2px solid;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
 
   .form-items {
     display: flex;
