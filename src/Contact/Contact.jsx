@@ -57,7 +57,7 @@ const Contact = () => {
       <h3 className="--ta">Contact</h3>
 
       <div className="contact">
-        <div>
+        <div className="texts__">
           <div>
             <label>PHONE:</label>
             <p>
@@ -72,10 +72,10 @@ const Contact = () => {
             <label>
               <RxHome /> &nbsp; ADDRESS:
             </label>
-            <address>
+            <p>
               NO 5, ODENIYI CLOSE - OKO FILLING, OFF AIT ROAD KOLA B/STOP, LAGOS
               STATE, NIGERIA.
-            </address>
+            </p>
           </div>
 
           <div>
