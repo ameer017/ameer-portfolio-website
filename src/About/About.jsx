@@ -20,7 +20,7 @@ const About = () => {
       </small>
       <div className="about">
         <p>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I'm a passionate software
+          I'm a passionate software
           developer with a strong foundation in creating innovative and
           efficient solutions. With 1 year of experience in the field, I have
           honed my skills in javascript programming language, frameworks, and
