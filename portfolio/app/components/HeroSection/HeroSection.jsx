@@ -1,11 +1,4 @@
-import Link from "next/link";
 import React from "react";
-import { GiSparkles } from "react-icons/gi";
-const navItems = [
-  { id: 1, title: "About", url: "#about" },
-  { id: 2, title: "Services", url: "#service" },
-  { id: 3, title: "Contact", url: "#contact" },
-];
 
 const HeroSection = () => {
   return (
@@ -27,11 +20,11 @@ const HeroSection = () => {
           development, I craft solutions that not only meet but exceed
           expectations.
         </p>
-        <div className="flex gap-[10px] mt-2 justify-center md:justify-start  ">
-          <button className="bg-blue-500 px-4 py-2 text-[15px] text-[#fff] rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1 ">
+        <div className="flex gap-[10px] mt-2 justify-center md:justify-start">
+          <button className="bg-blue-500 px-4 py-2 text-[15px] text-[#fff] rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1 cursor-pointer">
             Discover
           </button>
-          <button className="px-4 py-2 text-[15px] text-[#fff]  rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1 ">
+          <button className="px-4 py-2 text-[15px] text-[#fff]  rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1 cursor-pointer">
             Contact me
           </button>
         </div>
