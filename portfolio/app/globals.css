@@ -2,3 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+.nav-items {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .nav-items.open {
+    max-height: 1500px; /* Adjust the value based on your menu height */
+  }
+  
