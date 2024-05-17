@@ -35,7 +35,7 @@ const Header = () => {
 
         {isNavOpen && (
           <div
-            className={`nav-items flex flex-col absolute bg-none w-[100%] text-[#fff] right-0 left-0 mt-4 px-12 py-8 text-right ${
+            className={`nav-items flex flex-col absolute bg-[#2b2b2b] w-[100%] text-[#fff] right-0 left-0 mt-4 px-12 py-8 text-right ${
               isNavOpen ? "open" : ""
             }`}
           >

@@ -1,42 +1,40 @@
 import React from "react";
 import { MdOutlineDiamond } from "react-icons/md";
-import { FaCode, FaDesktop } from "react-icons/fa";
+import { BiBuildingHouse } from "react-icons/bi";
+import { TfiExchangeVertical } from "react-icons/tfi";
+import { BsSave2, BsTree } from "react-icons/bs";
 
 const data = [
   {
     id: 1,
-    title: "DESIGN",
-    icon: <MdOutlineDiamond />,
+    title: "EarthFi",
+    icon: <BsTree color="green" />,
+    bg: "",
     description:
-      "I am skilled in designing and developing websites using various programming languages and design tools. I am constantly staying updated with the latest trends and technologies in web design to ensure that my clients receive the most innovative and effective solutions.",
+      "EarthFi is a platform that embodies the principles of Web3 technology, championing a transformative era for a regenerative economy. Our primary goal is to redefine the traditional notion of waste, elevating it from depletion to a valuable resource, thus nurturing a more sustainable and vibrant environment.",
   },
   {
     id: 2,
-    title: "DEVELOPMENT",
-    icon: <FaCode />,
+    title: "Hostel Management",
+    icon: <BiBuildingHouse color="blue" />,
     description:
-      "I can develop, maintain websites and web applications as well as create the structure, layout, and interactivity of a website. I also work with server-side technologies, databases, and APIs to ensure the website functions properly and interacts with users and other systems.",
+      "A comprehensive Hostel Management App designed to streamline the administration of hostel facilities. This app offers features such as room allocation, student registration. With an intuitive user interface and robust backend, the app ensures efficient and seamless management of hostel operations.",
   },
   {
     id: 3,
-    title: "UI/UX",
-    icon: <FaDesktop />,
+    title: "DEX",
+    icon: <TfiExchangeVertical color="red" />,
+    bg: "",
     description:
-      "My design involves extensive research, wire framing, prototyping to ensure that the final product meets user needs and business goals. By combining creativity with user insights, I strive to craft meaningful and delightful experiences that resonate with users.",
+      "A Dapp that enables peer-to-peer trading of cryptocurrencies without intermediaries. This platform offers wallet integration, liquidity pools, automated market making. Built with a focus on security and user experience, it provides a seamless and efficient trading environment, empowering users to trade with confidence.",
   },
   {
     id: 4,
-    title: "UI/UX",
-    icon: <FaDesktop />,
+    title: "Auto Saver Dapp",
+    icon: <BsSave2 color="green" />,
+    bg: "",
     description:
-      "My design involves extensive research, wire framing, prototyping to ensure that the final product meets user needs and business goals. By combining creativity with user insights, I strive to craft meaningful and delightful experiences that resonate with users.",
-  },
-  {
-    id: 5,
-    title: "UI/UX",
-    icon: <FaDesktop />,
-    description:
-      "My design involves extensive research, wire framing, prototyping to ensure that the final product meets user needs and business goals. By combining creativity with user insights, I strive to craft meaningful and delightful experiences that resonate with users.",
+      "An innovative Auto Saver Decentralized Application (DApp) designed to automate savings and investments using smart contracts on the blockchain. The platform allows users to set saving goals, schedule automatic transfers, and earn interest on their savings through decentralized finance (DeFi) protocols.",
   },
 ];
 
@@ -52,13 +50,13 @@ const Project = () => {
           on.
         </p>
 
-        <div className="flex gap-5 items-center justify-center mt-4 flex-wrap ">
-          {data.map(({ id, title, icon, description }) => (
+        <div className="flex gap-5 items-center justify-center  mt-4 flex-wrap ">
+          {data.map(({ id, title, icon, description, bg }) => (
             <div
               key={id}
-              className="flex flex-col gap-3 border p-4 rounded-lg md:w-[300px] w-[100%] "
+              className="flex flex-col gap-3 border p-4 justify-end items-center rounded-lg md:w-[300px] w-[100%] "
             >
-              <p className="text-blue-600 mt-2 text-[40px] ">{icon}</p>
+              <p className=" mt-2 text-[40px] ">{icon}</p>
               <p className="font-bold text-[18px] ">{title}</p>
               <p>{description}</p>
             </div>
