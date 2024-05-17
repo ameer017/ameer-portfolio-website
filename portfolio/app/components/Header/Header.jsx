@@ -19,7 +19,7 @@ const Header = () => {
   };
 
   return (
-    <header className="px-12 py-8 text-[#fff] text-[20px] flex justify-between bg-none fixed w-screen ">
+    <header className="px-12 py-8 text-[#fff] text-[20px] flex justify-between bg-[#2b2b2b] fixed w-screen z-10 ">
       <Link href="/" className="flex gap-[10px] items-center justify-center">
         <GiSparkles />
         AL AMEER

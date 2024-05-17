@@ -1,6 +1,7 @@
 "use client";
 import Loader from "@/app/components/Loader/Loader"
 import HeroSection from "@/app/components/HeroSection/HeroSection"
+import About from "@/app/components/About/About"
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
     <div>
       {/* <Loader/> */}
       <HeroSection/>
+      <About/>
     </div>
   )
 }

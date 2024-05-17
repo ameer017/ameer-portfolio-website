@@ -3,7 +3,7 @@ import React from "react";
 const HeroSection = () => {
   return (
     <main
-      className="h-[50vh] md:h-[90vh] flex items-center justify-center md:justify-start px-12"
+      className="h-[50vh] md:h-[90vh] flex items-center justify-center md:justify-start px-24"
       style={{
         backgroundImage: `url(${"https://images.pexels.com/photos/2653362/pexels-photo-2653362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"})`,
         backgroundPosition: "right",
