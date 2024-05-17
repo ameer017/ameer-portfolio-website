@@ -3,6 +3,7 @@ import Loader from "@/app/components/Loader/Loader"
 import HeroSection from "@/app/components/HeroSection/HeroSection"
 import About from "@/app/components/About/About"
 import Service from "@/app/components/Service/Service"
+import Project from "@/app/components/Project/Project"
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       <HeroSection/>
       <About/>
       <Service/>
+      <Project/>
     </div>
   )
 }

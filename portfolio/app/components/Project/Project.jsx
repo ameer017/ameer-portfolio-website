@@ -1,6 +1,7 @@
 import React from "react";
 import { MdOutlineDiamond } from "react-icons/md";
 import { FaCode, FaDesktop } from "react-icons/fa";
+
 const data = [
   {
     id: 1,
@@ -23,14 +24,32 @@ const data = [
     description:
       "My design involves extensive research, wire framing, prototyping to ensure that the final product meets user needs and business goals. By combining creativity with user insights, I strive to craft meaningful and delightful experiences that resonate with users.",
   },
+  {
+    id: 4,
+    title: "UI/UX",
+    icon: <FaDesktop />,
+    description:
+      "My design involves extensive research, wire framing, prototyping to ensure that the final product meets user needs and business goals. By combining creativity with user insights, I strive to craft meaningful and delightful experiences that resonate with users.",
+  },
+  {
+    id: 5,
+    title: "UI/UX",
+    icon: <FaDesktop />,
+    description:
+      "My design involves extensive research, wire framing, prototyping to ensure that the final product meets user needs and business goals. By combining creativity with user insights, I strive to craft meaningful and delightful experiences that resonate with users.",
+  },
 ];
 
-const Service = () => {
+const Project = () => {
   return (
     <main className="px-10 md:px-24 flex gap-[50px] flex-wrap pt-[7.75rem] pb-[5.75rem]">
       <div className="w-screen">
         <p className="text-[#24262a] font-Poppins text-center  text-[22px] font-bold">
-          Offered services.
+          Projects.
+        </p>
+        <p className="text-[#24262a] font-Poppins text-center my-4 text-[15px]">
+          Listed below are some of the most representative projects I've worked
+          on.
         </p>
 
         <div className="flex gap-5 items-center justify-center mt-4 flex-wrap ">
@@ -50,4 +69,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default Project;
