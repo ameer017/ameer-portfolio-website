@@ -27,9 +27,9 @@ const dataTwo = [
 
 const About = () => {
   return (
-    <main className="px-10 md:px-24  text-left flex gap-[50px] flex-wrap pt-[7.75rem] pb-[5.75rem]">
+    <main className="px-10 md:px-24 bg-[#f7f9fb] text-left flex gap-[50px] flex-wrap pt-[7.75rem] pb-[5.75rem]">
       <div className=" ">
-        <p className="text-[#24262a] font-Poppins text-[20px] ">
+        <p className="text-[#24262a] font-Poppins text-[20px] font-bold ">
           Hi there! I&apos;m Abdullahi Raji.
         </p>
 
