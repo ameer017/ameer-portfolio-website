@@ -7,8 +7,10 @@ import { TfiMenu } from "react-icons/tfi";
 
 const navItems = [
   { id: 1, title: "About", url: "#about" },
-  { id: 2, title: "Services", url: "#service" },
-  { id: 3, title: "Contact", url: "#contact" },
+  { id: 2, title: "Services", url: "#ser" },
+  { id: 4, title: "Projects", url: "#pro" },
+  { id: 3, title: "Contact", url: "#con" },
+  { id: 5, title: "Resumé", url: "" },
 ];
 
 const Header = () => {

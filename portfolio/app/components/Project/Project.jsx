@@ -40,15 +40,17 @@ const data = [
 
 const Project = () => {
   return (
-    <main className="px-10 md:px-24 flex gap-[50px] flex-wrap pt-[7.75rem] pb-[5.75rem]">
-      <div className="w-screen">
-        <p className="text-[#24262a] font-Poppins text-center  text-[22px] font-bold">
-          Projects.
-        </p>
-        <p className="text-[#24262a] font-Poppins text-center my-4 text-[15px]">
-          Listed below are some of the most representative projects I've worked
-          on.
-        </p>
+    <main className="px-10 md:px-24 flex gap-[50px] flex-wrap pt-[7.75rem] pb-[5.75rem]" id="pro">
+      <div className="w-screen grid grid-cols-1 md:grid-cols-2	">
+        <div className="flex flex-col items-center justify-center">
+          <p className="text-[#24262a] font-Poppins text-center  text-[22px] font-bold">
+            Projects.
+          </p>
+          <p className="text-[#24262a] font-Poppins text-center my-4 text-[15px]">
+            Listed below are some of the most representative projects I've
+            worked on.
+          </p>
+        </div>
 
         <div className="flex gap-5 items-center justify-center  mt-4 flex-wrap ">
           {data.map(({ id, title, icon, description, bg }) => (
@@ -57,7 +59,7 @@ const Project = () => {
               className="flex flex-col gap-3 border p-4 justify-end items-center rounded-lg md:w-[300px] w-[100%] "
             >
               <p className=" mt-2 text-[40px] ">{icon}</p>
-              <p className="font-bold text-[18px] ">{title}</p>
+              <p className="font-bold text-[18px] my-2 ">{title}</p>
               <p>{description}</p>
             </div>
           ))}

@@ -22,7 +22,7 @@ const HeroSection = () => {
         </p>
         <div className="flex gap-[10px] mt-2 justify-center md:justify-start">
           <button className="bg-blue-500 px-4 py-2 text-[15px] text-[#fff] rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1 cursor-pointer">
-            Discover
+            Resumé
           </button>
           <button className="px-4 py-2 text-[15px] text-[#fff]  rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1 cursor-pointer">
             Contact me

@@ -27,7 +27,7 @@ const data = [
 
 const Service = () => {
   return (
-    <main className="px-10 md:px-24 flex gap-[50px] flex-wrap pt-[7.75rem] pb-[5.75rem]">
+    <main className="px-10 md:px-24 flex gap-[50px] flex-wrap pt-[7.75rem] pb-[5.75rem]" id="ser">
       <div className="w-screen">
         <p className="text-[#24262a] font-Poppins text-center  text-[22px] font-bold">
           Offered services.

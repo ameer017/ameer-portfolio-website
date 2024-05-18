@@ -13,4 +13,9 @@
   .nav-items.open {
     max-height: 1500px; /* Adjust the value based on your menu height */
   }
+
+
   
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
