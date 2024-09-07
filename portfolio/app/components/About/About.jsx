@@ -3,15 +3,15 @@ import React from "react";
 const data = [
   {
     id: 1,
-    title: "Junior Developer",
-    date: "2023 - Present",
+    title: "Software Developer",
+    date: "2022 - Present",
     description: "DLT Africa Academy",
   },
   {
     id: 2,
     title: "Technical Ambassador",
-    date: "2024 - Present",
-    description: "LISK Africa DAO",
+    date: "2024",
+    description: "LISK Africa",
   },
 ];
 
@@ -20,7 +20,7 @@ const dataTwo = [
     id: 3,
     title: "Freelance Developer",
     date: "2022 - Present",
-    description: "Working happily on my own web projects",
+    description: "Working happily on my own web products",
   },
 
 ]

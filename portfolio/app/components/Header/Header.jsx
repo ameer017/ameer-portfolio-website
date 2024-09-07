@@ -46,6 +46,7 @@ const Header = () => {
                 href={url}
                 key={id}
                 className="transition duration-500 ease-in-out transform hover:-translate-y-1 cursor-pointer"
+                onClick={toggleNav}
               >
                 {title}
               </Link>

@@ -47,7 +47,7 @@ const Contact = () => {
       className="px-10 md:px-24 flex flex-col items-center justify-center text-center gap-50px pt-[7.75rem] pb-[5.75rem]"
       id="con"
     >
-      <p className="text-[#24262a] font-bold text-[20px] font-bold ">
+      <p className="text-[#24262a] font-bold text-[20px] ">
         Contact.
       </p>
 
@@ -55,7 +55,7 @@ const Contact = () => {
         For any type of online project please don't hesitate to get in touch
         with me. The fastest way is to send me your message using the following
         email :{" "}
-        <a href="mailto:rajiabdullahi907@gmail.com" className="text-blue-600">
+        <a href="mailto:rajiabdullahi907@gmail.com" className="text-green-700">
           rajiabdullahi907@gmail.com
         </a>
       </p>
@@ -65,7 +65,7 @@ const Contact = () => {
           type="text"
           name="name"
           placeholder="Your Name"
-          className="border w-[500px] max-w-lg rounded-lg p-2 outline-none"
+          className="border w-[250px]  md:w-[500px] max-w-lg rounded-lg p-2 outline-none"
           value={formData.name}
           onChange={handleChange}
         />
@@ -73,14 +73,14 @@ const Contact = () => {
           type="email"
           name="email"
           placeholder="Your Email"
-          className="border w-[500px] max-w-lg rounded-lg p-2 outline-none"
+          className="border w-[250px]  md:w-[500px] max-w-lg rounded-lg p-2 outline-none"
           value={formData.email}
           onChange={handleChange}
         />
         <textarea
           name="message"
           placeholder="Your Message"
-          className="border w-[500px] max-w-lg rounded-lg p-2 outline-none"
+          className="border  w-[250px] md:w-[500px] max-w-lg rounded-lg p-2 outline-none"
           value={formData.message}
           onChange={handleChange}
         ></textarea>

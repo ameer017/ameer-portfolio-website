@@ -3,7 +3,7 @@ import React from "react";
 const HeroSection = () => {
   return (
     <main
-      className="h-[50vh] md:h-[90vh] flex items-center justify-center md:justify-start px-24"
+      className="h-[70vh] md:h-[90vh] flex items-center justify-center md:justify-start px-24"
       style={{
         backgroundImage: `url(${"https://images.pexels.com/photos/2653362/pexels-photo-2653362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"})`,
         backgroundPosition: "right",
@@ -21,11 +21,11 @@ const HeroSection = () => {
           expectations.
         </p>
         <div className="flex gap-[10px] mt-2 justify-center md:justify-start">
-          <button className="bg-blue-500 px-4 py-2 text-[15px] text-[#fff] rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1 cursor-pointer">
+          <a href="https://docs.google.com/document/d/13rlZy5yG3xnefqtAtbOEo88FZiZdaEEwXOn-vBST35o/edit?usp=sharing" className="bg-blue-500 px-4 py-2 text-[15px] text-[#fff] rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1 cursor-pointer">
             Resumé
-          </button>
+          </a>
           <button className="px-4 py-2 text-[15px] text-[#fff]  rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1 cursor-pointer">
-            Contact me
+            {/* Contact me */}
           </button>
         </div>
       </div>

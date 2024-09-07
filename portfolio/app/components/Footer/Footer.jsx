@@ -13,7 +13,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-[#333] h-[200px] flex flex-col gap-4 items-center justify-center">
-      <p className="text-[#fff] text-[15px] ">
+      <p className="text-[#fff] text-sm md:text-[15px] ">
         &copy; Copyright || {currentYear} || Raji Abdullah Al Ameer.
       </p>
 
