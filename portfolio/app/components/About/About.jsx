@@ -22,6 +22,12 @@ const dataTwo = [
     date: "2022 - Present",
     description: "Working happily on my own web products",
   },
+  {
+    id: 4,
+    title: "Tech Lead",
+    date: "2024 - Present",
+    description: "CrossFi Africa Ecosystem",
+  },
 
 ]
 
