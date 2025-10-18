@@ -13,8 +13,6 @@ const data = [
     tags: ["React Native", "Mobile", "E-Commerce"],
     description:
       "A freelance project for Tianlu Digital Service. A mobile application built with React Native that enables users to easily browse and order edible products. Features include intuitive product catalog, seamless checkout process, real-time order tracking, and user-friendly interface for a smooth food ordering experience.",
-    urlOne: "#",
-    urlTwo: "#",
   },
 
   {
