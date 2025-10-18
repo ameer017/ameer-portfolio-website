@@ -241,3 +241,17 @@ input:focus, textarea:focus {
     border-color: #667eea;
   }
 }
+
+/* Infinite Scroll Animation */
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

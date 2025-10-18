@@ -7,12 +7,12 @@ import { FaMoneyBillWave } from "react-icons/fa";
 const data = [
   {
     id: 1,
-    title: "Food Ordering App",
+    title: "Europ Foods App",
     icon: <MdFastfood />,
     color: "from-orange-500 to-red-500",
     tags: ["React Native", "Mobile", "E-Commerce"],
     description:
-      "A mobile application built with React Native that enables users to easily browse and order edible products. Features include intuitive product catalog, seamless checkout process, real-time order tracking, and user-friendly interface for a smooth food ordering experience.",
+      "A freelance project for Tianlu Digital Service. A mobile application built with React Native that enables users to easily browse and order edible products. Features include intuitive product catalog, seamless checkout process, real-time order tracking, and user-friendly interface for a smooth food ordering experience.",
     urlOne: "#",
     urlTwo: "#",
   },

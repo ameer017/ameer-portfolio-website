@@ -107,8 +107,8 @@ const About = () => {
         {/* Skills/Stats Section */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 fade-in">
           {[
-            { label: "Years Experience", value: "2+" },
-            { label: "Projects Completed", value: "20+" },
+            { label: "Years Experience", value: "4+" },
+            { label: "Projects Completed", value: "10+" },
             { label: "Technologies", value: "15+" },
             { label: "Happy Clients", value: "10+" },
           ].map((stat, index) => (
