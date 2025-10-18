@@ -1,108 +1,174 @@
 import React from "react";
-import { VscDebugDisconnect } from "react-icons/vsc";
-import { BiBuildingHouse } from "react-icons/bi";
-import { TfiExchangeVertical } from "react-icons/tfi";
-import { BsSave2, BsTree } from "react-icons/bs";
-import { GiShoppingCart } from "react-icons/gi";
-import { FaRegEye, FaGithub } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { MdFastfood } from "react-icons/md";
+import { MdOutlineDiamond } from "react-icons/md";
+import { FaMoneyBillWave } from "react-icons/fa";
 
 const data = [
   {
     id: 1,
-    title: "EarthFi",
-    icon: <BsTree color="#2a52be" />,
-    bg: "",
+    title: "Food Ordering App",
+    icon: <MdFastfood />,
+    color: "from-orange-500 to-red-500",
+    tags: ["React Native", "Mobile", "E-Commerce"],
     description:
-      "EarthFi is a platform that embodies the principles of Web3 technology, championing a transformative era for a regenerative economy. Our primary goal is to redefine the traditional notion of waste, elevating it from depletion to a valuable resource, thus nurturing a more sustainable and vibrant environment.",
-    urlOne: "https://www.earthfi.xyz",
-    urlTwo: "https://github.com/ameer017/avocet-frontend"
+      "A mobile application built with React Native that enables users to easily browse and order edible products. Features include intuitive product catalog, seamless checkout process, real-time order tracking, and user-friendly interface for a smooth food ordering experience.",
+    urlOne: "#",
+    urlTwo: "#",
   },
+
   {
     id: 2,
-    title: "Hostel Management",
-    icon: <BiBuildingHouse color="black" />,
+    title: "Safelock Dapp",
+    icon: <MdOutlineDiamond />,
+    color: "from-pink-500 to-rose-500",
+    tags: ["Blockchain", "DeFi", "Smart Contracts"],
     description:
-      "A comprehensive Hostel Management App designed to streamline the administration of hostel facilities. This app offers features such as room allocation, student registration. With an intuitive user interface and robust backend, the app ensures efficient and seamless management of hostel operations.",
-    urlOne: "#",
-    urlTwo: "https://github.com/ameer017/Hostel_management"
+      "SafeLock is a Web3-native savings and contingency platform that empowers users to build financial discipline",
+    urlOne: "https://safelock-web.vercel.app/",
+    urlTwo: "https://github.com/ameer017/Safelock",
   },
+
   {
     id: 3,
-    title: "DEX",
-    icon: <TfiExchangeVertical color="red" />,
-    bg: "",
+    title: "PayLite",
+    icon: <FaMoneyBillWave />,
+    color: "from-yellow-500 to-orange-500",
+    tags: ["Finance", "Payment", "P2P"],
     description:
-      "A Dapp that enables peer-to-peer trading of cryptocurrencies without intermediaries. This platform offers wallet integration, liquidity pools, automated market making. Built with a focus on security and user experience, it provides a seamless and efficient trading environment, empowering users to trade with confidence.",
-    urlOne: "#",
-    urlTwo: "https://github.com/ameer017/de-exchange"
-  },
-  {
-    id: 4,
-    title: "Auto Saver Dapp",
-    icon: <BsSave2 color="gold" />,
-    bg: "",
-    description:
-      "An innovative Auto Saver Decentralized Application (DApp) designed to automate savings and investments using smart contracts on the blockchain. The platform allows users to set saving goals, schedule automatic transfers, and earn interest on their savings through decentralized finance (DeFi) protocols.",
-    urlOne: "#",
-    urlTwo: "https://github.com/ameer017/Auto-saver"
-  },
-  {
-    id: 5,
-    title: "Ummah Connect",
-    icon: <VscDebugDisconnect color="green" />,
-    bg: "",
-    description:
-      "UmmahConnect is an innovative platform that fosters a sense of community and belonging among Muslims worldwide. By leveraging modern technology, UmmahConnect provides educational resources, community forums, networking opportunities, and various tools to enhance the spiritual and social lives of its users.",
-    urlOne: "https://ummah-connect.vercel.app",
-    urlTwo: "https://github.com/ameer017/ummah-connect"
-  },
-  {
-    id: 6,
-    title: "Celo Shop",
-    icon: <GiShoppingCart color="purple" />,
-    bg: "",
-    description:
-      "A decentralized online marketplace built on Web3 technology, offering users a seamless shopping experience with enhanced security and transparency. It empowers buyers and sellers by leveraging blockchain for transactions, and features a unique loyalty program that rewards users for their engagement and purchases.",
-    urlOne: "https://celo-shop-to-earn.vercel.app",
-    urlTwo: "https://github.com/ameer017/celo-earn"
+      "A modern, full-stack payment solution built with .NET 9, React, MongoDB, and Flutterwave. Features wallet management, P2P transfers, deposits.",
+    urlOne: "https://paylite-web-teal.vercel.app/",
+    urlTwo: "https://github.com/ameer017/paylite",
   },
 ];
-
 const Project = () => {
   return (
-    <main className="px-10 md:px-24 flex gap-[50px] flex-wrap pt-[7.75rem] pb-[5.75rem]" id="pro">
-      <div className="w-screen grid grid-cols-1 md:grid-cols-2	">
-        <div className="flex flex-col items-center justify-center">
-          <p className="text-[#24262a] font-Poppins text-center  text-[22px] font-bold">
-            Projects.
-          </p>
-          <p className="text-[#24262a] font-Poppins text-center my-4 text-[15px]">
+    <main
+      className="relative px-6 md:px-24 pt-[7.75rem] pb-[5.75rem] bg-gradient-to-br from-gray-50 via-white to-purple-50 overflow-hidden"
+      id="pro"
+    >
+      {/* Background Decorations */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-10 -right-10 w-96 h-96 bg-gradient-to-br from-blue-300 to-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow"></div>
+        <div
+          className="absolute -bottom-10 -left-10 w-96 h-96 bg-gradient-to-br from-pink-300 to-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow"
+          style={{ animationDelay: "2s" }}
+        ></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16 fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Featured <span className="gradient-text">Projects</span>
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded-full mb-4"></div>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Listed below are some of the most representative projects I've
-            worked on.
+            worked on, showcasing my skills in full-stack development and Web3
+            technologies.
           </p>
         </div>
 
-        <div className="flex gap-5 items-center justify-center  mt-4 flex-wrap ">
-          {data.map(({ id, title, icon, description, bg, urlOne, urlTwo }) => (
-            <div
-              key={id}
-              className="flex flex-col gap-3 border p-4 justify-end items-center rounded-lg md:w-[300px] w-[100%] relative "
-            >
-              <p className=" mt-2 text-[40px] ">{icon}</p>
-              <p className="font-bold text-[18px] my-2 ">{title}</p>
-              <p>{description}</p>
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {data.map(
+            (
+              { id, title, icon, description, urlOne, urlTwo, color, tags },
+              index
+            ) => (
+              <div
+                key={id}
+                className="group relative"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {/* Project Card */}
+                <div className="card-hover glass rounded-2xl border border-white/20 shadow-xl h-full flex flex-col overflow-hidden relative bg-white/50">
+                  {/* Card Header with Icon */}
+                  <div className="p-6 pb-4">
+                    <div
+                      className={`w-16 h-16 bg-gradient-to-br ${color} rounded-xl flex items-center justify-center text-white text-3xl shadow-lg mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}
+                    >
+                      {icon}
+                    </div>
 
-              <div className="flex absolute  top-2 right-2 w-[100%] h-[100%] justify-end items-start bg-opacity-50 gap-3">
-                <a href={urlOne} className="transform transition-transform duration-300 hover:scale-110" target="_blank">
-                  <FaRegEye size={25} />
-                </a>
-                <a href={urlTwo} className="transform transition-transform duration-300 hover:scale-110" target="_blank">
-                  <FaGithub size={25} />
-                </a>
+                    {/* Title */}
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-purple-600 group-hover:to-blue-600 transition-all">
+                      {title}
+                    </h3>
 
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {tags.map((tag, i) => (
+                        <span
+                          key={i}
+                          className="text-xs font-semibold text-purple-600 bg-purple-100 px-3 py-1 rounded-full"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <div className="px-6 pb-6 flex-grow">
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {description}
+                    </p>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="p-6 pt-0 mt-auto">
+                    <div className="flex gap-3">
+                      {urlOne !== "#" && (
+                        <a
+                          href={urlOne}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-2.5 rounded-lg font-medium text-sm hover:shadow-lg transition-all duration-300 group/btn"
+                        >
+                          <FaExternalLinkAlt className="group-hover/btn:translate-x-1 transition-transform" />
+                          <span>Live Demo</span>
+                        </a>
+                      )}
+                      <a
+                        href={urlTwo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${
+                          urlOne === "#" ? "flex-1" : ""
+                        } flex items-center justify-center gap-2 glass-dark text-gray-700 px-4 py-2.5 rounded-lg font-medium text-sm hover:bg-gray-800 hover:text-white transition-all duration-300 group/btn border border-gray-300`}
+                      >
+                        <FaGithub className="group-hover/btn:rotate-12 transition-transform" />
+                        <span>Code</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Hover Gradient Border */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl pointer-events-none`}
+                  ></div>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          )}
+        </div>
+
+        {/* View More Section */}
+        <div className="text-center mt-16 fade-in">
+          <p className="text-gray-700 text-lg mb-6">
+            Want to see more of my work?
+          </p>
+          <a
+            href="https://github.com/ameer017"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 btn-gradient px-8 py-4 text-white rounded-xl font-semibold text-lg shadow-lg group"
+          >
+            <FaGithub className="text-2xl group-hover:rotate-12 transition-transform" />
+            <span>Visit My GitHub</span>
+          </a>
         </div>
       </div>
     </main>
