@@ -6,7 +6,6 @@ import HeroSection from "@/app/components/HeroSection/HeroSection";
 import About from "@/app/components/About/About";
 import Service from "@/app/components/Service/Service";
 import Project from "@/app/components/Project/Project";
-import TechStack from "@/app/components/TechStack/TechStack";
 import Contact from "@/app/components/Contact/Contact";
 import Footer from "@/app/components/Footer/Footer";
 import { useEffect, useState } from "react";
@@ -25,14 +24,13 @@ export default function Home() {
       {loading ? (
         <Loader />
       ) : (
-        <div>
+        <div className="bg-black min-h-screen">
           <Header />
 
           <HeroSection />
           <About />
           <Service />
           <Project />
-          <TechStack />
           <Contact />
           <Footer />
         </div>
