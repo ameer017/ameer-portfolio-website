@@ -32,9 +32,9 @@ const data = [
   {
     id: 4,
     title: "Notify Hub",
-    tags: ["Go", "PostgreSQL", "Docker"],
+    tags: ["Go", "PostgreSQL", "Docker", "Kafka"],
     description:
-      "Fullstack notification platform for businesses, with email, SMS, and push notifications — built with Go, PostgreSQL, and Docker.",
+      "Fullstack notification platform for businesses, with email, SMS, and push notifications — built with Go, PostgreSQL, Docker, and Kafka.",
     urlOne: "#",
     urlTwo: "https://github.com/ameer017/scaling-guide/tree/main/notifyHub",
   },
