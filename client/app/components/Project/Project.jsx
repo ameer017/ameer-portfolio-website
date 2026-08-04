@@ -31,12 +31,12 @@ const data = [
   },
   {
     id: 4,
-    title: "Streakzz",
-    tags: ["TypeScript", "React", "Node.js", "MongoDB"],
+    title: "Notify Hub",
+    tags: ["Go", "PostgreSQL", "Docker"],
     description:
-      "Fullstack streak tracker for daily project submissions, with dashboards, admin tools, and a GitHub-style contribution graph.",
-    urlOne: "https://streakzz-sigma.vercel.app",
-    urlTwo: "https://github.com/ameer017/streakzz",
+      "Fullstack notification platform for businesses, with email, SMS, and push notifications — built with Go, PostgreSQL, and Docker.",
+    urlOne: "#",
+    urlTwo: "https://github.com/ameer017/scaling-guide/tree/main/notifyHub",
   },
 ];
 
