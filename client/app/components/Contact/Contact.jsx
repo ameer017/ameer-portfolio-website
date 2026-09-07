@@ -1,9 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
+import { useGSAP } from "@gsap/react";
+import {
+  gsap,
+  registerMotion,
+  prefersReducedMotion,
+} from "@/app/lib/motion";
 
 const Contact = () => {
+  const sectionRef = useRef(null);
   const initialFormData = {
     name: "",
     email: "",
@@ -13,6 +20,31 @@ const Contact = () => {
   const [formData, setFormData] = useState(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+
+  useGSAP(
+    () => {
+      registerMotion();
+      if (prefersReducedMotion() || !sectionRef.current) return;
+
+      gsap.fromTo(
+        ".contact-reveal",
+        { y: 48, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.9,
+          stagger: 0.12,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 70%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    },
+    { scope: sectionRef, revertOnUpdate: true }
+  );
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,7 +68,7 @@ const Contact = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
-        },
+        }
       );
 
       if (!response.ok) {
@@ -56,16 +88,17 @@ const Contact = () => {
   };
 
   const inputClass =
-    "w-full px-0 py-3 bg-transparent border-0 border-b border-neutral-800 rounded-none outline-none text-white placeholder:text-neutral-600 focus:border-neutral-500 transition-colors";
+    "w-full px-0 py-3 bg-transparent border-0 border-b border-dashed border-neutral-800 rounded-none outline-none text-white placeholder:text-neutral-600 focus:border-neutral-500 transition-colors";
 
   return (
     <main
-      className="relative px-6 md:px-12 lg:px-24 pt-24 pb-24 bg-black border-t border-white/5"
+      ref={sectionRef}
+      className="relative px-6 md:px-12 lg:px-24 pt-24 pb-24 bg-black border-t border-dashed border-neutral-800"
       id="con"
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-14 lg:gap-20 items-start">
-          <div>
+          <div className="contact-reveal">
             <p className="text-xs tracking-[0.2em] uppercase text-neutral-500 mb-4 font-medium">
               Contact
             </p>
@@ -78,7 +111,10 @@ const Contact = () => {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-8">
+          <form
+            onSubmit={handleSubmit}
+            className="contact-reveal space-y-8"
+          >
             <div className="grid sm:grid-cols-2 gap-8">
               <div>
                 <label

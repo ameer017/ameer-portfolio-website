@@ -1,4 +1,8 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
+import Chapter from "@/app/components/Motion/Chapter";
+import useChapterTimeline from "@/app/components/Motion/useChapterTimeline";
 
 const services = [
   {
@@ -22,42 +26,116 @@ const services = [
 ];
 
 const Service = () => {
-  return (
-    <main
-      className="relative px-6 md:px-12 lg:px-24 pt-24 pb-24 bg-black border-t border-white/5"
-      id="ser"
-    >
-      <div className="max-w-6xl mx-auto">
-        <div className="max-w-2xl mb-16">
-          <p className="text-xs tracking-[0.2em] uppercase text-neutral-500 mb-4 font-medium">
-            Services
-          </p>
-          <h2 className="font-space text-4xl md:text-5xl font-bold text-white tracking-tight mb-5">
-            What I can help you build.
-          </h2>
-          <p className="text-neutral-500 text-base md:text-[17px] leading-relaxed">
-            From product idea to shipped software — focused on clarity,
-            performance, and long-term maintainability.
-          </p>
-        </div>
+  const sectionRef = useRef(null);
 
-        <div className="grid md:grid-cols-3 gap-10 md:gap-8">
-          {services.map(({ id, title, description }) => (
-            <div key={id} className="group">
-              <span className="font-space text-sm text-neutral-600 tabular-nums">
-                {id}
-              </span>
-              <h3 className="mt-3 text-white text-xl font-semibold mb-3 group-hover:text-neutral-300 transition-colors">
-                {title}
-              </h3>
-              <p className="text-neutral-500 text-sm md:text-[15px] leading-relaxed">
-                {description}
-              </p>
-            </div>
-          ))}
+  useChapterTimeline(
+    sectionRef,
+    (tl, gsapInstance) => {
+      gsapInstance.set(
+        services.map((_, i) => `.svc-panel-${i}`).join(", "),
+        { autoAlpha: 0 }
+      );
+
+      tl.fromTo(
+        ".svc-header",
+        { y: 40, autoAlpha: 0 },
+        { y: 0, autoAlpha: 1, duration: 0.6 }
+      );
+
+      services.forEach((_, i) => {
+        const sel = `.svc-panel-${i}`;
+        if (i === 0) {
+          tl.fromTo(
+            sel,
+            { autoAlpha: 0, y: 60, clipPath: "inset(100% 0 0 0)" },
+            {
+              autoAlpha: 1,
+              y: 0,
+              clipPath: "inset(0% 0 0 0)",
+              duration: 0.7,
+            },
+            "-=0.2"
+          );
+        } else {
+          tl.to(`.svc-panel-${i - 1}`, {
+            autoAlpha: 0,
+            y: -40,
+            duration: 0.45,
+            ease: "power2.in",
+          }).fromTo(
+            sel,
+            { autoAlpha: 0, y: 60, clipPath: "inset(100% 0 0 0)" },
+            {
+              autoAlpha: 1,
+              y: 0,
+              clipPath: "inset(0% 0 0 0)",
+              duration: 0.7,
+            }
+          );
+        }
+      });
+
+      tl.to(".svc-stage", {
+        autoAlpha: 0.35,
+        scale: 0.97,
+        duration: 0.5,
+      });
+    },
+    { endDesktop: "+=260%", endMobile: "+=200%" }
+  );
+
+  return (
+    <Chapter
+      id="ser"
+      innerRef={sectionRef}
+      className="border-b border-dashed border-neutral-800"
+    >
+      <div className="svc-stage relative h-full px-6 md:px-12 lg:px-24 py-20 md:py-24">
+        <div className="max-w-6xl mx-auto h-full flex flex-col">
+          <div className="svc-header max-w-2xl mb-10 md:mb-14">
+            <p className="text-xs tracking-[0.2em] uppercase text-neutral-500 mb-4 font-medium">
+              Services
+            </p>
+            <h2 className="font-space text-4xl md:text-5xl font-bold text-white tracking-tight mb-5">
+              What I can help you build.
+            </h2>
+            <p className="text-neutral-500 text-base md:text-[17px] leading-relaxed">
+              From product idea to shipped software — focused on clarity,
+              performance, and long-term maintainability.
+            </p>
+          </div>
+
+          <div className="relative flex-1 min-h-[240px]">
+            {services.map(({ id, title, description }, i) => (
+              <div
+                key={id}
+                className={`svc-panel-${i} absolute inset-0 flex flex-col justify-center`}
+              >
+                <span className="font-space text-6xl md:text-8xl font-bold text-neutral-900 tabular-nums select-none">
+                  {id}
+                </span>
+                <h3 className="mt-2 text-white text-3xl md:text-4xl font-semibold font-space">
+                  {title}
+                </h3>
+                <p className="mt-4 text-neutral-500 text-base md:text-lg leading-relaxed max-w-xl">
+                  {description}
+                </p>
+                <div className="mt-8 flex gap-2">
+                  {services.map((s, idx) => (
+                    <span
+                      key={s.id}
+                      className={`h-1 w-8 rounded-full transition-colors ${
+                        idx === i ? "bg-white" : "bg-neutral-800"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </main>
+    </Chapter>
   );
 };
 

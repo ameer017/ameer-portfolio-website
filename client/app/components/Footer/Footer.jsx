@@ -29,7 +29,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black border-t border-white/5 px-6 md:px-12 lg:px-24 py-16 md:py-20">
+    <footer className="bg-black border-t border-dashed border-neutral-800 px-6 md:px-12 lg:px-24 py-16 md:py-20">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
           <div className="max-w-md">
@@ -67,7 +67,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-14 pt-6 border-t border-neutral-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="mt-14 pt-6 border-t border-dashed border-neutral-800 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-neutral-600 text-xs sm:text-sm">
             &copy; {currentYear} Abdullah Raji. All rights reserved.
           </p>

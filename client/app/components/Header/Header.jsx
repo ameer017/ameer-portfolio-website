@@ -17,7 +17,9 @@ const Header = () => {
   return (
     <header
       className={`px-6 md:px-12 py-5 flex justify-center items-center fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-black/80 backdrop-blur-md border-b border-white/5" : "bg-transparent"
+        scrolled
+          ? "bg-black/80 backdrop-blur-md border-b border-dashed border-neutral-800"
+          : "bg-transparent"
       }`}
     >
       <Link

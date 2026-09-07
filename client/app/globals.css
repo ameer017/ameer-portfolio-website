@@ -332,3 +332,39 @@ input:focus, textarea:focus {
 @keyframes bar-grow {
   to { transform: scaleX(1); }
 }
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Reduced motion: skip loader sketch delays / cinematic CSS */
+@media (prefers-reduced-motion: reduce) {
+  .loader-path,
+  .loader-fill,
+  .loader-ghost,
+  .loader-caption,
+  .loader-bar-fill {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
