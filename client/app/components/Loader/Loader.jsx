@@ -9,6 +9,7 @@ const Loader = ({ onReveal, onComplete }) => {
   const captionRef = useRef(null);
   const nameRef = useRef(null);
   const barRef = useRef(null);
+  const flashRef = useRef(null);
   const revealedRef = useRef(false);
 
   useEffect(() => {
@@ -30,7 +31,8 @@ const Loader = ({ onReveal, onComplete }) => {
         });
       });
 
-      gsap.set(nameRef.current, { autoAlpha: 0, scale: 0.88, y: 24 });
+      gsap.set(nameRef.current, { autoAlpha: 0, scale: 1.35, y: 40 });
+      gsap.set(flashRef.current, { autoAlpha: 0 });
       gsap.set(rootRef.current, { clipPath: "inset(0% 0 0% 0)" });
 
       const revealSite = () => {
@@ -40,51 +42,55 @@ const Loader = ({ onReveal, onComplete }) => {
       };
 
       const tl = gsap.timeline({
-        defaults: { ease: "power2.out" },
         onComplete: () => onComplete?.(),
       });
 
       tl.to(paths, {
         strokeDashoffset: 0,
-        duration: 0.55,
-        stagger: 0.18,
-        ease: "power2.inOut",
+        duration: 0.42,
+        stagger: 0.12,
+        ease: "power3.inOut",
       })
-        .to(".loader-fill", { autoAlpha: 1, duration: 0.35 }, "-=0.35")
+        .to(".loader-fill", { autoAlpha: 1, duration: 0.25 }, "-=0.25")
         .to(
           barRef.current,
-          { scaleX: 1, duration: 1.4, ease: "power1.inOut" },
-          0.1
+          { scaleX: 1, duration: 1.05, ease: "expo.inOut" },
+          0.05
         )
         .to(
           [markRef.current, captionRef.current, barRef.current],
           {
             autoAlpha: 0,
-            y: -28,
-            scale: 0.92,
-            duration: 0.45,
-            ease: "power2.in",
+            y: -56,
+            scale: 0.78,
+            duration: 0.38,
+            ease: "power4.in",
           },
-          "+=0.15"
+          "+=0.08"
         )
+        .to(
+          flashRef.current,
+          { autoAlpha: 0.55, duration: 0.08, ease: "none" },
+          "-=0.12"
+        )
+        .to(flashRef.current, { autoAlpha: 0, duration: 0.28, ease: "power2.out" })
         .to(
           nameRef.current,
           {
             autoAlpha: 1,
             scale: 1,
             y: 0,
-            duration: 0.7,
-            ease: "power3.out",
+            duration: 0.75,
+            ease: "expo.out",
           },
-          "-=0.15"
+          "-=0.35"
         )
-        .to({}, { duration: 0.35 })
-        // Mount the site only as the wipe starts, so the hero never peeks under AA
+        .to({}, { duration: 0.28 })
         .add(revealSite)
         .to(rootRef.current, {
           clipPath: "inset(0% 0 100% 0)",
-          duration: 0.85,
-          ease: "power3.inOut",
+          duration: 0.7,
+          ease: "expo.inOut",
         })
         .set(rootRef.current, { autoAlpha: 0 });
     }, rootRef);
@@ -99,12 +105,14 @@ const Loader = ({ onReveal, onComplete }) => {
       style={{ clipPath: "inset(0% 0 0% 0)" }}
     >
       <div className="absolute inset-0 loader-grain" aria-hidden="true" />
+      <div
+        ref={flashRef}
+        className="absolute inset-0 bg-white pointer-events-none z-30 opacity-0"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 flex flex-col items-center justify-center gap-6 px-6 w-full min-h-[280px]">
-        <div
-          ref={markRef}
-          className="flex flex-col items-center gap-6"
-        >
+        <div ref={markRef} className="flex flex-col items-center gap-6">
           <svg
             className="w-[200px] sm:w-[260px] h-auto"
             viewBox="0 0 220 130"

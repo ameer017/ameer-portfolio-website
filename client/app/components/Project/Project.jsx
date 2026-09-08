@@ -55,52 +55,69 @@ const Project = () => {
         { autoAlpha: 0 }
       );
 
-      tl.fromTo(
+      tl.addLabel("intro").fromTo(
         ".proj-header",
-        { y: 36, autoAlpha: 0 },
-        { y: 0, autoAlpha: 1, duration: 0.55 }
+        { y: 60, autoAlpha: 0, scale: 0.94 },
+        { y: 0, autoAlpha: 1, scale: 1, duration: 0.65, ease: "expo.out" }
       );
 
       data.forEach((_, i) => {
         const sel = `.proj-slide-${i}`;
-        if (i === 0) {
-          tl.fromTo(
-            sel,
-            { autoAlpha: 0, x: 80, clipPath: "inset(0 0 0 100%)" },
-            {
-              autoAlpha: 1,
-              x: 0,
-              clipPath: "inset(0 0 0 0%)",
-              duration: 0.75,
-            },
-            "-=0.15"
-          );
-        } else {
+        tl.addLabel(`proj${i}`);
+
+        if (i > 0) {
           tl.to(`.proj-slide-${i - 1}`, {
             autoAlpha: 0,
-            x: -60,
-            duration: 0.45,
-            ease: "power2.in",
-          }).fromTo(
-            sel,
-            { autoAlpha: 0, x: 80, clipPath: "inset(0 0 0 100%)" },
-            {
-              autoAlpha: 1,
-              x: 0,
-              clipPath: "inset(0 0 0 0%)",
-              duration: 0.75,
-            }
-          );
+            x: -120,
+            rotate: -3,
+            scale: 0.9,
+            filter: "blur(6px)",
+            duration: 0.4,
+            ease: "power3.in",
+          });
         }
+
+        tl.fromTo(
+          sel,
+          {
+            autoAlpha: 0,
+            x: 140,
+            rotate: 4,
+            scale: 1.06,
+            clipPath: "inset(0 0 0 100%)",
+          },
+          {
+            autoAlpha: 1,
+            x: 0,
+            rotate: 0,
+            scale: 1,
+            clipPath: "inset(0 0 0 0%)",
+            duration: 0.75,
+            ease: "expo.out",
+          }
+        );
       });
 
       tl.to(".proj-stage", {
-        autoAlpha: 0.4,
-        y: -24,
-        duration: 0.5,
+        autoAlpha: 0.15,
+        y: -40,
+        scale: 0.92,
+        filter: "blur(5px)",
+        duration: 0.55,
+        ease: "power3.in",
       });
     },
-    { endDesktop: "+=320%", endMobile: "+=260%" }
+    {
+      endDesktop: "+=360%",
+      endMobile: "+=280%",
+      scrub: 0.35,
+      snap: {
+        snapTo: "labels",
+        duration: { min: 0.12, max: 0.35 },
+        delay: 0,
+        ease: "power2.inOut",
+      },
+    }
   );
 
   return (
@@ -109,7 +126,7 @@ const Project = () => {
       innerRef={sectionRef}
       className="border-b border-dashed border-neutral-800"
     >
-      <div className="proj-stage h-full px-6 md:px-12 lg:px-24 py-20 md:py-24 flex flex-col">
+      <div className="proj-stage h-full px-6 md:px-12 lg:px-24 py-20 md:py-24 flex flex-col will-change-transform">
         <div className="max-w-6xl mx-auto w-full flex-1 flex flex-col">
           <div className="proj-header text-center mb-10 md:mb-12">
             <p className="text-xs tracking-[0.2em] uppercase text-neutral-500 mb-3 font-medium">

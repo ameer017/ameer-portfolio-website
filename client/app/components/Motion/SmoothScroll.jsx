@@ -18,9 +18,10 @@ const SmoothScroll = ({ children }) => {
     }
 
     const lenis = new Lenis({
-      duration: 1.15,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 0.85,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -12 * t)),
       smoothWheel: true,
+      touchMultiplier: 1.35,
     });
 
     lenis.on("scroll", ScrollTrigger.update);

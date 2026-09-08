@@ -52,15 +52,43 @@ const HeroSection = ({ showScrollCue = false }) => {
   useChapterTimeline(
     sectionRef,
     (tl) => {
-      tl.to({}, { duration: 1.25 }).to(".hero-stage", {
-        y: -48,
-        autoAlpha: 0.25,
-        scale: 0.96,
+      tl.to(".hero-left", {
+        y: -80,
+        x: -24,
+        autoAlpha: 0.15,
+        scale: 0.92,
         duration: 1,
-        ease: "power2.in",
-      });
+        ease: "none",
+      }, 0.35)
+        .to(
+          ".hero-right",
+          {
+            y: -40,
+            x: 40,
+            autoAlpha: 0.1,
+            scale: 0.9,
+            duration: 1,
+            ease: "none",
+          },
+          0.35
+        )
+        .to(
+          ".hero-cue",
+          { autoAlpha: 0, y: 20, duration: 0.4, ease: "none" },
+          0.2
+        )
+        .to(
+          ".hero-stage",
+          {
+            scale: 0.88,
+            filter: "blur(6px)",
+            duration: 0.65,
+            ease: "none",
+          },
+          0.75
+        );
     },
-    { endDesktop: "+=140%", endMobile: "+=100%" }
+    { endDesktop: "+=160%", endMobile: "+=110%", scrub: 0.35 }
   );
 
   useEffect(() => {
@@ -75,13 +103,13 @@ const HeroSection = ({ showScrollCue = false }) => {
     registerMotion();
     const tween = gsap.fromTo(
       cueRef.current,
-      { autoAlpha: 0, y: -8 },
+      { autoAlpha: 0, y: 16 },
       {
         autoAlpha: 1,
         y: 0,
-        duration: 0.6,
-        delay: 0.15,
-        ease: "power2.out",
+        duration: 0.7,
+        delay: 0.2,
+        ease: "expo.out",
       }
     );
 
@@ -93,9 +121,9 @@ const HeroSection = ({ showScrollCue = false }) => {
       innerRef={sectionRef}
       className="border-b border-dashed border-neutral-800"
     >
-      <div className="hero-stage relative h-full flex items-center justify-center px-6 md:px-12 lg:px-24 pt-24 pb-16">
+      <div className="hero-stage relative h-full flex items-center justify-center px-6 md:px-12 lg:px-24 pt-24 pb-16 will-change-transform">
         <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-          <div className="flex flex-col items-start text-left">
+          <div className="hero-left flex flex-col items-start text-left will-change-transform">
             <h1 className="hero-title font-space text-5xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight">
               Abdullah Raji
               <span className="inline-block w-2.5 h-2.5 ml-1 mb-1 rounded-full bg-neutral-500 align-bottom" />
@@ -136,7 +164,7 @@ const HeroSection = ({ showScrollCue = false }) => {
             </div>
           </div>
 
-          <div className="lg:justify-self-end w-full max-w-md">
+          <div className="hero-right lg:justify-self-end w-full max-w-md will-change-transform">
             <p className="hero-stack-label flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-neutral-500 mb-5 font-medium">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" />
               Current Stack
@@ -158,7 +186,7 @@ const HeroSection = ({ showScrollCue = false }) => {
 
         <div
           ref={cueRef}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-neutral-500 opacity-0"
+          className="hero-cue absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-neutral-500 opacity-0"
           aria-hidden={!showScrollCue}
         >
           <span className="text-[10px] tracking-[0.25em] uppercase">Scroll</span>

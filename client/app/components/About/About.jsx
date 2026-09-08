@@ -67,47 +67,59 @@ const About = () => {
     (tl) => {
       tl.fromTo(
         ".about-intro",
-        { y: 48, autoAlpha: 0 },
-        { y: 0, autoAlpha: 1, duration: 0.7 }
+        { y: 100, autoAlpha: 0, rotateX: 12, transformOrigin: "top left" },
+        { y: 0, autoAlpha: 1, rotateX: 0, duration: 0.85, ease: "expo.out" }
       )
         .fromTo(
           ".about-stat",
-          { y: 20, autoAlpha: 0 },
-          { y: 0, autoAlpha: 1, stagger: 0.08, duration: 0.4 },
-          "-=0.3"
+          { y: 40, autoAlpha: 0, scale: 0.85 },
+          {
+            y: 0,
+            autoAlpha: 1,
+            scale: 1,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "back.out(1.6)",
+          },
+          "-=0.45"
         )
         .fromTo(
           ".about-exp-item",
-          { x: 40, autoAlpha: 0, clipPath: "inset(0 0 100% 0)" },
+          { x: 80, autoAlpha: 0, skewX: 6, clipPath: "inset(0 0 100% 0)" },
           {
             x: 0,
             autoAlpha: 1,
+            skewX: 0,
             clipPath: "inset(0 0 0% 0)",
-            stagger: 0.2,
-            duration: 0.55,
+            stagger: 0.18,
+            duration: 0.65,
+            ease: "expo.out",
           },
-          "-=0.2"
-        )
-        .fromTo(
-          ".about-secondary",
-          { y: 60, autoAlpha: 0 },
-          { y: 0, autoAlpha: 1, duration: 0.6 },
-          "-=0.1"
+          "-=0.25"
         )
         .fromTo(
           ".about-sec-card",
-          { x: 48, autoAlpha: 0 },
-          { x: 0, autoAlpha: 1, stagger: 0.12, duration: 0.45 },
-          "-=0.35"
+          { y: 90, autoAlpha: 0, scale: 0.9 },
+          {
+            y: 0,
+            autoAlpha: 1,
+            scale: 1,
+            stagger: 0.12,
+            duration: 0.55,
+            ease: "expo.out",
+          },
+          "-=0.15"
         )
         .to(".about-stage", {
-          autoAlpha: 0.4,
-          scale: 0.97,
-          duration: 0.6,
-          ease: "power2.in",
+          autoAlpha: 0.2,
+          scale: 0.92,
+          y: -30,
+          filter: "blur(4px)",
+          duration: 0.7,
+          ease: "power3.in",
         });
     },
-    { endDesktop: "+=220%", endMobile: "+=160%" }
+    { endDesktop: "+=240%", endMobile: "+=170%", scrub: 0.4 }
   );
 
   return (
@@ -116,7 +128,7 @@ const About = () => {
       innerRef={sectionRef}
       className="border-b border-dashed border-neutral-800"
     >
-      <div className="about-stage h-full overflow-y-auto px-6 md:px-12 lg:px-24 py-20 md:py-24">
+      <div className="about-stage h-full overflow-y-auto px-6 md:px-12 lg:px-24 py-20 md:py-24 will-change-transform" style={{ perspective: "1000px" }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16">
             <div className="about-intro">

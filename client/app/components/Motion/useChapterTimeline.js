@@ -9,14 +9,13 @@ import {
 
 /**
  * Pins a full-viewport section and returns a scrubbed timeline for storytelling.
- * @param {React.RefObject} sectionRef - section root (h-screen)
- * @param {(tl: gsap.core.Timeline) => void} build - add tweens to the timeline
- * @param {{ endDesktop?: string, endMobile?: string, dependencies?: unknown[] }} options
  */
 export function useChapterTimeline(sectionRef, build, options = {}) {
   const {
     endDesktop = "+=220%",
     endMobile = "+=140%",
+    scrub = 0.45,
+    snap = null,
     dependencies = [],
   } = options;
 
@@ -34,9 +33,11 @@ export function useChapterTimeline(sectionRef, build, options = {}) {
           start: "top top",
           end,
           pin: true,
-          scrub: 1,
+          scrub,
+          snap: snap || undefined,
           anticipatePin: 1,
           invalidateOnRefresh: true,
+          fastScrollEnd: true,
         },
       });
 

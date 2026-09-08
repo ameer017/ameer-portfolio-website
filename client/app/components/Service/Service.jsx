@@ -36,52 +36,88 @@ const Service = () => {
         { autoAlpha: 0 }
       );
 
-      tl.fromTo(
-        ".svc-header",
-        { y: 40, autoAlpha: 0 },
-        { y: 0, autoAlpha: 1, duration: 0.6 }
-      );
+      tl.addLabel("intro")
+        .fromTo(
+          ".svc-header",
+          { y: 70, autoAlpha: 0, scale: 0.94 },
+          { y: 0, autoAlpha: 1, scale: 1, duration: 0.7, ease: "expo.out" }
+        );
 
       services.forEach((_, i) => {
         const sel = `.svc-panel-${i}`;
-        if (i === 0) {
-          tl.fromTo(
-            sel,
-            { autoAlpha: 0, y: 60, clipPath: "inset(100% 0 0 0)" },
-            {
-              autoAlpha: 1,
-              y: 0,
-              clipPath: "inset(0% 0 0 0)",
-              duration: 0.7,
-            },
-            "-=0.2"
-          );
-        } else {
+        const num = `${sel} .svc-num`;
+        const title = `${sel} .svc-title`;
+        const copy = `${sel} .svc-copy`;
+
+        tl.addLabel(`svc${i}`);
+
+        if (i > 0) {
           tl.to(`.svc-panel-${i - 1}`, {
             autoAlpha: 0,
-            y: -40,
-            duration: 0.45,
-            ease: "power2.in",
-          }).fromTo(
-            sel,
-            { autoAlpha: 0, y: 60, clipPath: "inset(100% 0 0 0)" },
-            {
-              autoAlpha: 1,
-              y: 0,
-              clipPath: "inset(0% 0 0 0)",
-              duration: 0.7,
-            }
-          );
+            y: -70,
+            scale: 0.92,
+            filter: "blur(8px)",
+            duration: 0.4,
+            ease: "power3.in",
+          });
         }
+
+        tl.fromTo(
+          sel,
+          {
+            autoAlpha: 0,
+            y: 100,
+            scale: 1.08,
+            clipPath: "inset(100% 0 0 0)",
+          },
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            clipPath: "inset(0% 0 0 0)",
+            duration: 0.75,
+            ease: "expo.out",
+          }
+        )
+          .fromTo(
+            num,
+            { scale: 1.45, autoAlpha: 0.2, x: -40 },
+            { scale: 1, autoAlpha: 1, x: 0, duration: 0.55, ease: "expo.out" },
+            "-=0.55"
+          )
+          .fromTo(
+            title,
+            { y: 36, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.4, ease: "power3.out" },
+            "-=0.35"
+          )
+          .fromTo(
+            copy,
+            { y: 24, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.35, ease: "power2.out" },
+            "-=0.2"
+          );
       });
 
       tl.to(".svc-stage", {
-        autoAlpha: 0.35,
-        scale: 0.97,
-        duration: 0.5,
+        autoAlpha: 0.15,
+        scale: 0.9,
+        filter: "blur(5px)",
+        duration: 0.55,
+        ease: "power3.in",
       });
     },
-    { endDesktop: "+=260%", endMobile: "+=200%" }
+    {
+      endDesktop: "+=300%",
+      endMobile: "+=230%",
+      scrub: 0.35,
+      snap: {
+        snapTo: "labels",
+        duration: { min: 0.12, max: 0.35 },
+        delay: 0,
+        ease: "power2.inOut",
+      },
+    }
   );
 
   return (
@@ -90,7 +126,7 @@ const Service = () => {
       innerRef={sectionRef}
       className="border-b border-dashed border-neutral-800"
     >
-      <div className="svc-stage relative h-full px-6 md:px-12 lg:px-24 py-20 md:py-24">
+      <div className="svc-stage relative h-full px-6 md:px-12 lg:px-24 py-20 md:py-24 will-change-transform">
         <div className="max-w-6xl mx-auto h-full flex flex-col">
           <div className="svc-header max-w-2xl mb-10 md:mb-14">
             <p className="text-xs tracking-[0.2em] uppercase text-neutral-500 mb-4 font-medium">
@@ -111,20 +147,20 @@ const Service = () => {
                 key={id}
                 className={`svc-panel-${i} absolute inset-0 flex flex-col justify-center`}
               >
-                <span className="font-space text-6xl md:text-8xl font-bold text-neutral-900 tabular-nums select-none">
+                <span className="svc-num font-space text-6xl md:text-8xl font-bold text-neutral-900 tabular-nums select-none will-change-transform">
                   {id}
                 </span>
-                <h3 className="mt-2 text-white text-3xl md:text-4xl font-semibold font-space">
+                <h3 className="svc-title mt-2 text-white text-3xl md:text-4xl font-semibold font-space">
                   {title}
                 </h3>
-                <p className="mt-4 text-neutral-500 text-base md:text-lg leading-relaxed max-w-xl">
+                <p className="svc-copy mt-4 text-neutral-500 text-base md:text-lg leading-relaxed max-w-xl">
                   {description}
                 </p>
                 <div className="mt-8 flex gap-2">
                   {services.map((s, idx) => (
                     <span
                       key={s.id}
-                      className={`h-1 w-8 rounded-full transition-colors ${
+                      className={`h-1 w-8 rounded-full ${
                         idx === i ? "bg-white" : "bg-neutral-800"
                       }`}
                     />

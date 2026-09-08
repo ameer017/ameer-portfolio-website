@@ -28,16 +28,17 @@ const Contact = () => {
 
       gsap.fromTo(
         ".contact-reveal",
-        { y: 48, autoAlpha: 0 },
+        { y: 80, autoAlpha: 0, scale: 0.96 },
         {
           y: 0,
           autoAlpha: 1,
-          duration: 0.9,
-          stagger: 0.12,
-          ease: "power3.out",
+          scale: 1,
+          duration: 1,
+          stagger: 0.14,
+          ease: "expo.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 70%",
+            start: "top 75%",
             toggleActions: "play none none reverse",
           },
         }
