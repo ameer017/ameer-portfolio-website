@@ -5,6 +5,8 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import Chapter from "@/app/components/Motion/Chapter";
 import useChapterTimeline from "@/app/components/Motion/useChapterTimeline";
 
+const DEFAULT_IMAGE = "/projects/default.jpg";
+
 const data = [
   {
     id: 1,
@@ -14,6 +16,7 @@ const data = [
       "Nigeria-focused train ticketing: passenger booking plus an operator console || Lagos–Ibadan and Abuja–Kaduna are seeded with NGN fares and WAT times.",
     urlOne: "https://rail-ng.netlify.app/",
     urlTwo: "https://github.com/ameer017/railNG",
+    image: "/projects/rail-ng.png",
   },
   {
     id: 2,
@@ -23,6 +26,7 @@ const data = [
       "A developer-first CLI that scaffolds production-ready auth and user CRUD for Node.js, NestJS, or FastAPI — JWT, hashing, and protected routes included.",
     urlOne: "#",
     urlTwo: "https://github.com/ameer017/auth-pulse",
+    image: "/projects/auth-pulse.jpg",
   },
   {
     id: 3,
@@ -32,6 +36,7 @@ const data = [
       "Full-stack payment platform with wallet management, P2P transfers, and deposits — built with .NET 9, React, MongoDB, and Flutterwave.",
     urlOne: "https://paylite-web-teal.vercel.app/",
     urlTwo: "https://github.com/ameer017/paylite",
+    image: "/projects/paylite.jpg",
   },
   {
     id: 4,
@@ -41,8 +46,104 @@ const data = [
       "Fullstack notification platform for businesses, with email, SMS, and push notifications — built with Go, PostgreSQL, Docker, and Kafka.",
     urlOne: "#",
     urlTwo: "https://github.com/ameer017/scaling-guide/tree/main/notifyHub",
+    // no image — falls back to default
   },
 ];
+
+const ProjectCard = ({
+  id,
+  title,
+  description,
+  urlOne,
+  urlTwo,
+  tags,
+  image,
+  index,
+  total,
+}) => {
+  const bg = image || DEFAULT_IMAGE;
+
+  return (
+    <article
+      className={`proj-slide-${index} absolute inset-0 flex flex-col justify-center max-w-3xl mx-auto`}
+    >
+      <div
+        className="relative overflow-hidden border border-dashed border-neutral-800 rounded-2xl min-h-[340px] md:min-h-[380px] flex flex-col justify-end"
+        style={{
+          backgroundImage: `url(${bg}), url(${DEFAULT_IMAGE})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-black/40"
+          aria-hidden="true"
+        />
+
+        <div className="relative z-10 p-6 md:p-10">
+          <div className="flex items-center justify-between gap-4 mb-4">
+            <span className="font-space text-sm text-neutral-400 tabular-nums">
+              {String(index + 1).padStart(2, "0")} /{" "}
+              {String(total).padStart(2, "0")}
+            </span>
+            <div className="flex gap-1.5">
+              {Array.from({ length: total }).map((_, idx) => (
+                <span
+                  key={idx}
+                  className={`h-1 w-6 rounded-full ${
+                    idx === index ? "bg-white" : "bg-white/20"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
+          <h3 className="text-2xl md:text-4xl font-bold text-white font-space mb-4">
+            {title}
+          </h3>
+
+          <div className="flex flex-wrap gap-2 mb-5">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-xs font-medium text-neutral-200 bg-black/50 border border-white/15 px-3 py-1 rounded-full backdrop-blur-sm"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <p className="text-neutral-300 leading-relaxed text-sm md:text-base mb-8 max-w-2xl">
+            {description}
+          </p>
+
+          <div className="flex flex-wrap gap-3">
+            {urlOne !== "#" && (
+              <a
+                href={urlOne}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-white text-black px-5 py-2.5 rounded-full font-medium text-sm hover:bg-neutral-200 transition-colors"
+              >
+                <FaExternalLinkAlt />
+                Live Demo
+              </a>
+            )}
+            <a
+              href={urlTwo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 border border-white/25 text-neutral-200 bg-black/40 px-5 py-2.5 rounded-full font-medium text-sm hover:border-white/50 hover:text-white transition-colors backdrop-blur-sm"
+            >
+              <FaGithub />
+              Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+};
 
 const Project = () => {
   const sectionRef = useRef(null);
@@ -141,76 +242,15 @@ const Project = () => {
             </p>
           </div>
 
-          <div className="relative flex-1 min-h-[320px]">
-            {data.map(
-              ({ id, title, description, urlOne, urlTwo, tags }, i) => (
-                <article
-                  key={id}
-                className={`proj-slide-${i} absolute inset-0 flex flex-col justify-center max-w-3xl mx-auto`}
-                >
-                  <div className="border border-dashed border-neutral-800 bg-neutral-950/80 p-6 md:p-10 rounded-2xl">
-                    <div className="flex items-center justify-between gap-4 mb-4">
-                      <span className="font-space text-sm text-neutral-600 tabular-nums">
-                        {String(i + 1).padStart(2, "0")} /{" "}
-                        {String(data.length).padStart(2, "0")}
-                      </span>
-                      <div className="flex gap-1.5">
-                        {data.map((_, idx) => (
-                          <span
-                            key={idx}
-                            className={`h-1 w-6 rounded-full ${
-                              idx === i ? "bg-white" : "bg-neutral-800"
-                            }`}
-                          />
-                        ))}
-                      </div>
-                    </div>
-
-                    <h3 className="text-2xl md:text-4xl font-bold text-white font-space mb-4">
-                      {title}
-                    </h3>
-
-                    <div className="flex flex-wrap gap-2 mb-5">
-                      {tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-xs font-medium text-neutral-300 bg-neutral-900 border border-neutral-800 px-3 py-1 rounded-full"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    <p className="text-neutral-400 leading-relaxed text-sm md:text-base mb-8">
-                      {description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-3">
-                      {urlOne !== "#" && (
-                        <a
-                          href={urlOne}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-2 bg-white text-black px-5 py-2.5 rounded-full font-medium text-sm hover:bg-neutral-200 transition-colors"
-                        >
-                          <FaExternalLinkAlt />
-                          Live Demo
-                        </a>
-                      )}
-                      <a
-                        href={urlTwo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 border border-neutral-700 text-neutral-300 px-5 py-2.5 rounded-full font-medium text-sm hover:border-neutral-500 hover:text-white transition-colors"
-                      >
-                        <FaGithub />
-                        Code
-                      </a>
-                    </div>
-                  </div>
-                </article>
-              )
-            )}
+          <div className="relative flex-1 min-h-[340px] md:min-h-[400px]">
+            {data.map((project, i) => (
+              <ProjectCard
+                key={project.id}
+                {...project}
+                index={i}
+                total={data.length}
+              />
+            ))}
           </div>
 
           <div className="text-center mt-8">
