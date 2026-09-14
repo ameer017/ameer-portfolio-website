@@ -8,12 +8,12 @@ import useChapterTimeline from "@/app/components/Motion/useChapterTimeline";
 const data = [
   {
     id: 1,
-    title: "Ledger Core",
-    tags: ["TypeScript", "PostgreSQL", "Nomba", "Finance"],
+    title: "Rail NG",
+    tags: ["TypeScript", "PostgreSQL", "Prisma ORM", "Transportation"],
     description:
-      "Universal reconciliation engine on Nomba Virtual Accounts — captures inbound transfers, matches them to obligations, and maintains an immutable customer ledger in real time.",
-    urlOne: "https://velo-credit-ledger-core.vercel.app/",
-    urlTwo: "https://github.com/Ledger-OS-Infra/ledger-core",
+      "Nigeria-focused train ticketing: passenger booking plus an operator console || Lagos–Ibadan and Abuja–Kaduna are seeded with NGN fares and WAT times.",
+    urlOne: "https://rail-ng.netlify.app/",
+    urlTwo: "https://github.com/ameer017/railNG",
   },
   {
     id: 2,
