@@ -13,20 +13,20 @@ const data = [
     title: "Rail NG",
     tags: ["TypeScript", "PostgreSQL", "Prisma ORM", "Transportation"],
     description:
-      "Nigeria-focused train ticketing: passenger booking plus an operator console || Lagos–Ibadan and Abuja–Kaduna are seeded with NGN fares and WAT times.",
+      "A specialized train ticketing platform for Nigeria, providing seamless passenger booking alongside an operator management console. Pre-configured with real routes including Lagos–Ibadan || Abuja–Kaduna, featuring localized NGN pricing, West Africa Time scheduling, and a mocked payment gateway for end-to-end testing.",
     urlOne: "https://rail-ng.netlify.app/",
     urlTwo: "https://github.com/ameer017/railNG",
     image: "/projects/rail-ng.png",
   },
   {
     id: 2,
-    title: "Auth Pulse",
-    tags: ["CLI", "SDK", "NestJS", "Node.js"],
+    title: "Medi Vault",
+    tags: ["TypeScript", "PostgreSQL", "Prisma ORM", "Healthcare Records"],
     description:
-      "A developer-first CLI that scaffolds production-ready auth and user CRUD for Node.js, NestJS, or FastAPI — JWT, hashing, and protected routes included.",
-    urlOne: "#",
-    urlTwo: "https://github.com/ameer017/auth-pulse",
-    image: "/projects/auth-pulse.jpg",
+      "A patient-owned healthcare record system designed for Nigeria. Patients retain full control of their medical charts, grant time-limited access to clinicians, and carry an emergency QR card for instant access during critical care. Initial rollout covers seeded healthcare facilities across Lagos, Abuja, and Ibadan",
+    urlOne: "https://medic-vault.netlify.app/",
+    urlTwo: "https://github.com/ameer017/medi-vault",
+    image: "/projects/medic-vault.png",
   },
   {
     id: 3,
@@ -151,15 +151,14 @@ const Project = () => {
   useChapterTimeline(
     sectionRef,
     (tl, gsapInstance) => {
-      gsapInstance.set(
-        data.map((_, i) => `.proj-slide-${i}`).join(", "),
-        { autoAlpha: 0 }
-      );
+      gsapInstance.set(data.map((_, i) => `.proj-slide-${i}`).join(", "), {
+        autoAlpha: 0,
+      });
 
       tl.addLabel("intro").fromTo(
         ".proj-header",
         { y: 60, autoAlpha: 0, scale: 0.94 },
-        { y: 0, autoAlpha: 1, scale: 1, duration: 0.65, ease: "expo.out" }
+        { y: 0, autoAlpha: 1, scale: 1, duration: 0.65, ease: "expo.out" },
       );
 
       data.forEach((_, i) => {
@@ -195,7 +194,7 @@ const Project = () => {
             clipPath: "inset(0 0 0 0%)",
             duration: 0.75,
             ease: "expo.out",
-          }
+          },
         );
       });
 
@@ -218,7 +217,7 @@ const Project = () => {
         delay: 0,
         ease: "power2.inOut",
       },
-    }
+    },
   );
 
   return (
