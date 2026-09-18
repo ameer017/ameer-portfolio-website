@@ -4,8 +4,10 @@ import Header from "@/app/components/Header/Header";
 import Loader from "@/app/components/Loader/Loader";
 import HeroSection from "@/app/components/HeroSection/HeroSection";
 import About from "@/app/components/About/About";
-import Service from "@/app/components/Service/Service";
+import TechToolbox from "@/app/components/Service/Service";
+import Partners from "@/app/components/Partners/Partners";
 import Project from "@/app/components/Project/Project";
+import Testimonial from "@/app/components/Testimonial/Testimonial";
 import Contact from "@/app/components/Contact/Contact";
 import Footer from "@/app/components/Footer/Footer";
 import SmoothScroll from "@/app/components/Motion/SmoothScroll";
@@ -35,8 +37,10 @@ export default function Home() {
             <Header />
             <HeroSection showScrollCue={!showLoader} />
             <About />
-            <Service />
+            <TechToolbox />
+            <Partners />
             <Project />
+            <Testimonial />
             <Contact />
             <Footer />
           </SmoothScroll>

@@ -94,20 +94,19 @@ const Contact = () => {
   return (
     <main
       ref={sectionRef}
-      className="relative px-6 md:px-12 lg:px-24 pt-24 pb-24 bg-black border-t border-dashed border-neutral-800"
+      className="relative px-6 md:px-10 pt-24 pb-24 bg-black border-t border-white/10"
       id="con"
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-14 lg:gap-20 items-start">
           <div className="contact-reveal">
-            <p className="text-xs tracking-[0.2em] uppercase text-neutral-500 mb-4 font-medium">
-              Contact
-            </p>
-            <h2 className="font-space text-4xl md:text-5xl font-bold text-white tracking-tight mb-5">
-              Let&apos;s build something.
+            <span className="section-pill">Contact</span>
+            <h2 className="mt-5 font-space text-4xl md:text-5xl font-bold text-white tracking-tight mb-5">
+              Let&apos;s build something{" "}
+              <span className="font-emphasis">together</span>.
             </h2>
             <p className="text-neutral-500 text-base md:text-[17px] leading-relaxed max-w-sm mb-8">
-              Have a project in mind or want to collaborate? Send a message — I
+              Have a project in mind or want to collaborate? Send a message. I
               usually reply within a day.
             </p>
           </div>

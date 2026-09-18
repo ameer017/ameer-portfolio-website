@@ -1,232 +1,129 @@
 "use client";
 
 import React, { useRef } from "react";
-import Chapter from "@/app/components/Motion/Chapter";
-import useChapterTimeline from "@/app/components/Motion/useChapterTimeline";
+import Link from "next/link";
+import { FiArrowRight } from "react-icons/fi";
+import {
+  SiReact,
+  SiNodedotjs,
+  SiTypescript,
+  SiPostgresql,
+  SiGo,
+} from "react-icons/si";
+import { RiNextjsFill } from "react-icons/ri";
+import { useGSAP } from "@gsap/react";
+import {
+  gsap,
+  registerMotion,
+  prefersReducedMotion,
+} from "@/app/lib/motion";
 
-const primaryExperience = [
-  {
-    id: 1,
-    title: "Engineering Lead",
-    company: "DLT Africa Tech Hub",
-    detail: "Leading engineering mentorship and product builds across the hub.",
-    stack: ["MongoDB", "Express", "React", "Node.js"],
-  },
-  {
-    id: 2,
-    title: "Infrastructure Engineer",
-    company: "Brokex CFD",
-    detail:
-      "Building and maintaining the infrastructure for the Brokex CFD platform.",
-    stack: ["Rust", "Next.js"],
-  },
-];
-
-const secondaryExperience = [
-  {
-    id: 3,
-    title: "Mobile & Fullstack Engineer",
-    company: "Tianlu Digital Service",
-    detail:
-      "Shipped production mobile and fullstack systems for client products.",
-    stack: [
-      "React Native",
-      "NestJS",
-      "Kubernetes",
-      "AWS",
-      "DigitalOcean",
-      "MySQL",
-    ],
-  },
-  {
-    id: 4,
-    title: "Backend Engineer",
-    company: "Ledger Core",
-    detail: "Building the backend for the Ledger Core platform.",
-    stack: ["Node.js", "React", "PostgreSQL"],
-  },
-  {
-    id: 5,
-    title: "Freelance Fullstack Developer",
-    company: "Independent",
-    detail: "Building fullstack solutions for startups and businesses.",
-  },
-];
-
-const stats = [
-  { value: "4+", label: "Years" },
-  { value: "10+", label: "Projects" },
-  { value: "15+", label: "Technologies" },
+const roles = [
+  { label: "Web", Icon: SiReact },
+  { label: "Backend", Icon: SiNodedotjs },
+  { label: "Mobile", Icon: RiNextjsFill },
+  { label: "Systems", Icon: SiGo },
+  { label: "Data", Icon: SiPostgresql },
+  { label: "TypeScript", Icon: SiTypescript },
 ];
 
 const About = () => {
   const sectionRef = useRef(null);
 
-  useChapterTimeline(
-    sectionRef,
-    (tl) => {
-      tl.fromTo(
-        ".about-intro",
-        { y: 100, autoAlpha: 0, rotateX: 12, transformOrigin: "top left" },
-        { y: 0, autoAlpha: 1, rotateX: 0, duration: 0.85, ease: "expo.out" }
-      )
-        .fromTo(
-          ".about-stat",
-          { y: 40, autoAlpha: 0, scale: 0.85 },
-          {
-            y: 0,
-            autoAlpha: 1,
-            scale: 1,
-            stagger: 0.1,
-            duration: 0.5,
-            ease: "back.out(1.6)",
+  useGSAP(
+    () => {
+      registerMotion();
+      if (prefersReducedMotion() || !sectionRef.current) return;
+
+      gsap.fromTo(
+        ".about-reveal",
+        { y: 48, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.9,
+          stagger: 0.12,
+          ease: "expo.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 70%",
+            toggleActions: "play none none reverse",
           },
-          "-=0.45"
-        )
-        .fromTo(
-          ".about-exp-item",
-          { x: 80, autoAlpha: 0, skewX: 6, clipPath: "inset(0 0 100% 0)" },
-          {
-            x: 0,
-            autoAlpha: 1,
-            skewX: 0,
-            clipPath: "inset(0 0 0% 0)",
-            stagger: 0.18,
-            duration: 0.65,
-            ease: "expo.out",
-          },
-          "-=0.25"
-        )
-        .fromTo(
-          ".about-sec-card",
-          { y: 90, autoAlpha: 0, scale: 0.9 },
-          {
-            y: 0,
-            autoAlpha: 1,
-            scale: 1,
-            stagger: 0.12,
-            duration: 0.55,
-            ease: "expo.out",
-          },
-          "-=0.15"
-        )
-        .to(".about-stage", {
-          autoAlpha: 0.2,
-          scale: 0.92,
-          y: -30,
-          filter: "blur(4px)",
-          duration: 0.7,
-          ease: "power3.in",
-        });
+        }
+      );
     },
-    { endDesktop: "+=240%", endMobile: "+=170%", scrub: 0.4 }
+    { scope: sectionRef, revertOnUpdate: true }
   );
 
   return (
-    <Chapter
+    <section
+      ref={sectionRef}
       id="about"
-      innerRef={sectionRef}
-      className="border-b border-dashed border-neutral-800"
+      className="relative bg-black px-6 md:px-10 py-24 md:py-32 border-t border-white/10"
     >
-      <div className="about-stage h-full overflow-y-auto px-6 md:px-12 lg:px-24 py-20 md:py-24 will-change-transform" style={{ perspective: "1000px" }}>
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16">
-            <div className="about-intro">
-              <p className="text-xs tracking-[0.2em] uppercase text-neutral-500 mb-4 font-medium">
-                About
-              </p>
-              <h2 className="font-space text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
-                Building products that work in the real world.
-              </h2>
-              <p className="text-neutral-500 text-base md:text-[17px] leading-relaxed max-w-xl">
-                From JavaScript and React Native to backend services and Web3, I
-                turn complex problems into software teams can trust and users
-                actually enjoy.
-              </p>
+      <div className="max-w-6xl mx-auto">
+        <div className="about-reveal mb-8">
+          <span className="section-pill">Who Am I</span>
+        </div>
 
-              <div className="mt-8 flex flex-row flex-wrap items-baseline gap-x-8 gap-y-2">
-                {stats.map(({ value, label }) => (
-                  <p key={label} className="about-stat text-neutral-400 text-sm">
-                    <span className="font-space text-2xl font-bold text-white mr-1.5">
-                      {value}
-                    </span>
-                    {label}
-                  </p>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <p className="text-xs tracking-[0.2em] uppercase text-neutral-500 mb-6 font-medium">
-                Experience
-              </p>
-              <ul>
-                {primaryExperience.map((item, index) => (
-                  <li
-                    key={item.id}
-                    className={`about-exp-item py-5 ${
-                      index !== primaryExperience.length - 1
-                        ? "border-b border-dashed border-neutral-800"
-                        : ""
-                    }`}
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1.5">
-                      <h3 className="text-white font-semibold text-lg">
-                        {item.title}
-                      </h3>
-                      <span className="text-neutral-500 text-sm">
-                        {item.company}
-                      </span>
-                    </div>
-                    <p className="text-neutral-500 text-sm leading-relaxed">
-                      {item.detail}
-                    </p>
-                    {item.stack?.length > 0 && (
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        {item.stack.map((tech) => (
-                          <span
-                            key={tech}
-                            className="text-xs text-neutral-400 border border-neutral-800 bg-neutral-950 px-2.5 py-1 rounded-full"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="about-reveal">
+            <h2 className="font-space text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight uppercase leading-tight">
+              Everything about{" "}
+              <span className="font-emphasis normal-case text-[1.05em]">
+                Abdullah
+              </span>
+            </h2>
+            <p className="mt-6 text-neutral-400 text-base md:text-lg leading-relaxed max-w-xl">
+              From JavaScript and React Native to backend services and
+              infrastructure, I turn complex problems into software teams can
+              trust and users actually enjoy. Currently leading engineering
+              mentorship at DLT Africa and shipping products across web, mobile,
+              and systems.
+            </p>
+            <Link
+              href="#toolbox"
+              className="mt-8 inline-flex items-center gap-2 text-sm tracking-[0.16em] uppercase text-white hover:text-neutral-300 transition-colors font-medium"
+            >
+              Learn More
+              <FiArrowRight className="text-base" />
+            </Link>
           </div>
 
-          <div className="about-secondary mt-12 pt-8 border-t border-dashed border-neutral-800 flex flex-col md:flex-row gap-8 md:gap-6">
-            {secondaryExperience.map((item) => (
-              <div key={item.id} className="about-sec-card flex-1 min-w-0">
-                <h3 className="text-white font-semibold text-lg mb-1">
-                  {item.title}
-                </h3>
-                <p className="text-neutral-500 text-sm mb-2">{item.company}</p>
-                <p className="text-neutral-500 text-sm leading-relaxed mb-3">
-                  {item.detail}
-                </p>
-                {item.stack?.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
-                    {item.stack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-xs text-neutral-400 border border-neutral-800 bg-neutral-950 px-2.5 py-1 rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                )}
+          <div className="about-reveal relative mx-auto w-full max-w-md aspect-square">
+            <div className="absolute inset-[12%] rounded-full border border-dashed border-white/15" />
+            <div className="absolute inset-[28%] rounded-full border border-white/10 bg-white/[0.02]" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-24 h-24 rounded-full border border-white/20 bg-neutral-950 flex items-center justify-center">
+                <span className="font-space text-2xl font-bold text-white">
+                  AA
+                </span>
               </div>
-            ))}
+            </div>
+            {roles.map(({ label, Icon }, i) => {
+              const angle = (i / roles.length) * Math.PI * 2 - Math.PI / 2;
+              const radius = 42;
+              const x = 50 + Math.cos(angle) * radius;
+              const y = 50 + Math.sin(angle) * radius;
+              return (
+                <div
+                  key={label}
+                  className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1.5"
+                  style={{ left: `${x}%`, top: `${y}%` }}
+                >
+                  <div className="w-11 h-11 rounded-full border border-white/15 bg-black/90 backdrop-blur flex items-center justify-center text-white text-lg">
+                    <Icon />
+                  </div>
+                  <span className="text-[10px] tracking-wide uppercase text-neutral-500">
+                    {label}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
-    </Chapter>
+    </section>
   );
 };
 

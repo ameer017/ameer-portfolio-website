@@ -1,199 +1,115 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import {
-  SiJavascript,
-  SiTypescript,
-  SiReact,
-  SiNodedotjs,
-  SiGo,
-  SiMongodb,
-  SiPostgresql,
-  SiNestjs,
-  SiRust,
-  SiPython,
-} from "react-icons/si";
-import { RiNextjsFill } from "react-icons/ri";
-import { BsGithub, BsTwitterX, BsMedium } from "react-icons/bs";
 import { HiChevronDown } from "react-icons/hi";
-import Chapter from "@/app/components/Motion/Chapter";
-import useChapterTimeline from "@/app/components/Motion/useChapterTimeline";
-import { gsap, registerMotion, ScrollTrigger } from "@/app/lib/motion";
+import { useGSAP } from "@gsap/react";
+import { gsap, registerMotion, prefersReducedMotion } from "@/app/lib/motion";
 
-const stack = [
-  { name: "JavaScript", icon: SiJavascript },
-  { name: "TypeScript", icon: SiTypescript },
-  { name: "React", icon: SiReact },
-  { name: "Next.js", icon: RiNextjsFill },
-  { name: "Node.js", icon: SiNodedotjs },
-  { name: "Go", icon: SiGo },
-  { name: "NestJS", icon: SiNestjs },
-  { name: "MongoDB", icon: SiMongodb },
-  { name: "PostgreSQL", icon: SiPostgresql },
-  { name: "Rust", icon: SiRust },
-  { name: "Python", icon: SiPython },
-];
-
-const socials = [
-  { name: "GitHub", href: "https://github.com/ameer017", icon: BsGithub },
-  { name: "Twitter", href: "https://x.com/17_alAmeer", icon: BsTwitterX },
-  {
-    name: "Medium",
-    href: "https://medium.com/@rajiabdullahi907",
-    icon: BsMedium,
-  },
+const stats = [
+  { value: "4+", label: "Years Experience" },
+  { value: "10+", label: "Shipped Projects" },
 ];
 
 const HeroSection = ({ showScrollCue = false }) => {
   const sectionRef = useRef(null);
-  const cueRef = useRef(null);
 
-  useChapterTimeline(
-    sectionRef,
-    (tl) => {
-      tl.to(".hero-left", {
-        y: -80,
-        x: -24,
-        autoAlpha: 0.15,
-        scale: 0.92,
-        duration: 1,
-        ease: "none",
-      }, 0.35)
-        .to(
-          ".hero-right",
-          {
-            y: -40,
-            x: 40,
-            autoAlpha: 0.1,
-            scale: 0.9,
-            duration: 1,
-            ease: "none",
-          },
-          0.35
-        )
-        .to(
-          ".hero-cue",
-          { autoAlpha: 0, y: 20, duration: 0.4, ease: "none" },
-          0.2
-        )
-        .to(
-          ".hero-stage",
-          {
-            scale: 0.88,
-            filter: "blur(6px)",
-            duration: 0.65,
-            ease: "none",
-          },
-          0.75
-        );
+  useGSAP(
+    () => {
+      registerMotion();
+      if (prefersReducedMotion() || !sectionRef.current) return;
+
+      gsap.fromTo(
+        ".hero-anim",
+        { y: 40, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 1,
+          stagger: 0.12,
+          ease: "expo.out",
+          delay: 0.05,
+        },
+      );
     },
-    { endDesktop: "+=160%", endMobile: "+=110%", scrub: 0.35 }
+    { scope: sectionRef, revertOnUpdate: true },
   );
 
-  useEffect(() => {
-    registerMotion();
-    const id = requestAnimationFrame(() => ScrollTrigger.refresh());
-    return () => cancelAnimationFrame(id);
-  }, []);
-
-  useEffect(() => {
-    if (!showScrollCue || !cueRef.current) return;
-
-    registerMotion();
-    const tween = gsap.fromTo(
-      cueRef.current,
-      { autoAlpha: 0, y: 16 },
-      {
-        autoAlpha: 1,
-        y: 0,
-        duration: 0.7,
-        delay: 0.2,
-        ease: "expo.out",
-      }
-    );
-
-    return () => tween.kill();
-  }, [showScrollCue]);
-
   return (
-    <Chapter
-      innerRef={sectionRef}
-      className="border-b border-dashed border-neutral-800"
+    <section
+      ref={sectionRef}
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden bg-black hero-grid"
     >
-      <div className="hero-stage relative h-full flex items-center justify-center px-6 md:px-12 lg:px-24 pt-24 pb-16 will-change-transform">
-        <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-          <div className="hero-left flex flex-col items-start text-left will-change-transform">
-            <h1 className="hero-title font-space text-5xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight">
-              Abdullah Raji
-              <span className="inline-block w-2.5 h-2.5 ml-1 mb-1 rounded-full bg-neutral-500 align-bottom" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_70%_40%,rgba(255,255,255,0.06),transparent_55%)]" />
+
+      <div className="relative w-full max-w-6xl mx-auto px-6 md:px-10 pt-28 pb-20 md:pt-32 md:pb-24">
+        <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center">
+          <div>
+            <h1 className="hero-anim font-space text-4xl sm:text-5xl md:text-6xl lg:text-[3.75rem] font-bold text-white tracking-tight leading-[1.08]">
+              From <span className="font-emphasis text-[1.08em]">Sketch</span>{" "}
+              to Scale. I Build the Web You{" "}
+              <span className="font-emphasis text-[1.08em]">Imagine</span>.
             </h1>
 
-            <p className="hero-role mt-4 text-neutral-400 text-lg md:text-xl font-medium">
-              Fullstack Software Engineer
+            <p className="hero-anim mt-6 text-neutral-400 text-base md:text-lg leading-relaxed max-w-lg">
+              Fullstack software engineer crafting reliable products, from
+              polished interfaces to the systems behind them.
             </p>
 
-            <p className="hero-copy mt-5 text-neutral-500 text-[15px] md:text-base leading-relaxed max-w-md">
-              I build software that solves real business problems. As a
-              full-stack software engineer, I design and develop scalable web
-              and mobile applications, architect reliable backend systems, and
-              create intuitive user experiences.
-            </p>
+            <div className="hero-anim mt-10 flex flex-wrap gap-8 md:gap-12">
+              {stats.map(({ value, label }) => (
+                <div key={label}>
+                  <p className="font-space text-3xl md:text-4xl font-bold text-white">
+                    {value}
+                  </p>
+                  <p className="mt-1 text-sm text-neutral-500">{label}</p>
+                </div>
+              ))}
+            </div>
 
-            <div className="hero-actions mt-8 flex flex-wrap items-center gap-5">
-              <div className="flex items-center gap-5">
-                {socials.map(({ name, href, icon: Icon }) => (
-                  <a
-                    key={name}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={name}
-                    className="text-neutral-500 hover:text-white transition-colors text-xl"
-                  >
-                    <Icon />
-                  </a>
-                ))}
-              </div>
+            <div className="hero-anim mt-10 flex flex-wrap items-center gap-4">
               <Link
                 href="#con"
-                className="inline-flex items-center justify-center px-6 py-2.5 rounded-full border border-neutral-600 text-white text-sm font-medium hover:border-neutral-400 hover:bg-white/5 transition-colors"
+                className="inline-flex items-center px-6 py-3 rounded-full bg-white text-black text-sm font-medium hover:bg-neutral-200 transition-colors"
               >
-                Contact Me
+                Let&apos;s Talk
+              </Link>
+              <Link
+                href="#pro"
+                className="inline-flex items-center px-6 py-3 rounded-full border border-white/20 text-white text-sm font-medium hover:border-white/40 hover:bg-white/5 transition-colors"
+              >
+                View Work
               </Link>
             </div>
           </div>
 
-          <div className="hero-right lg:justify-self-end w-full max-w-md will-change-transform">
-            <p className="hero-stack-label flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-neutral-500 mb-5 font-medium">
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              Current Stack
-            </p>
-
-            <div className="flex flex-wrap gap-2.5">
-              {stack.map(({ name, icon: Icon }) => (
-                <div
-                  key={name}
-                  className="hero-chip inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900/80 px-3.5 py-2 text-sm text-neutral-300"
-                >
-                  <Icon className="text-base text-neutral-400" />
-                  <span>{name}</span>
-                </div>
-              ))}
+          <div className="hero-anim relative mx-auto lg:mx-0 w-full max-w-sm lg:max-w-none">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 bg-neutral-950">
+              <Image
+                src="/abdullah.jpeg"
+                alt="Abdullah Raji"
+                fill
+                priority
+                sizes="(max-width: 1024px) 80vw, 400px"
+                className="object-cover object-center grayscale-[20%]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             </div>
           </div>
         </div>
 
-        <div
-          ref={cueRef}
-          className="hero-cue absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-neutral-500 opacity-0"
-          aria-hidden={!showScrollCue}
-        >
-          <span className="text-[10px] tracking-[0.25em] uppercase">Scroll</span>
-          <HiChevronDown className="text-lg animate-bounce" />
-        </div>
+        {showScrollCue && (
+          <div className="hero-anim absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-1 text-neutral-500">
+            <span className="text-[10px] tracking-[0.25em] uppercase">
+              Scroll
+            </span>
+            <HiChevronDown className="text-lg animate-bounce" />
+          </div>
+        )}
       </div>
-    </Chapter>
+    </section>
   );
 };
 

@@ -37,6 +37,7 @@ const config: Config = {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
         space: ['Space Grotesk', 'sans-serif'],
+        italic: ['Instrument Serif', 'Georgia', 'serif'],
       },
       animation: {
         'gradient': 'gradient 15s ease infinite',
@@ -45,6 +46,13 @@ const config: Config = {
         'slideInLeft': 'slideInLeft 0.8s ease-out',
         'slideInRight': 'slideInRight 0.8s ease-out',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'marquee': 'marquee 28s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
