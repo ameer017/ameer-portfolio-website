@@ -3,11 +3,7 @@
 import React, { useRef } from "react";
 import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import { useGSAP } from "@gsap/react";
-import {
-  gsap,
-  registerMotion,
-  prefersReducedMotion,
-} from "@/app/lib/motion";
+import { gsap, registerMotion, prefersReducedMotion } from "@/app/lib/motion";
 
 const DEFAULT_IMAGE = "/projects/default.jpg";
 
@@ -38,10 +34,11 @@ const data = [
   },
   {
     id: 4,
-    title: "Notify Hub",
-    subtitle: "Notifications Platform",
-    urlOne: "#",
-    urlTwo: "https://github.com/ameer017/scaling-guide/tree/main/notifyHub",
+    title: "Estate NG",
+    subtitle: "Estate and Property Management",
+    urlOne: "https://estate-ng.netlify.app/",
+    urlTwo: "https://github.com/ameer017/estate-ng",
+    image: "/projects/estate-ng.png",
   },
 ];
 
@@ -68,8 +65,7 @@ const ProjectCard = ({ title, subtitle, urlOne, urlTwo, image }) => {
 
       <div className="mt-4 flex items-start justify-between gap-4">
         <h3 className="text-white text-base md:text-lg font-medium leading-snug">
-          {title}{" "}
-          <span className="text-neutral-500">[{subtitle}]</span>
+          {title} <span className="text-neutral-500">[{subtitle}]</span>
         </h3>
         <FiArrowRight className="shrink-0 mt-1 text-white text-lg transition-transform duration-300 group-hover:translate-x-1" />
       </div>
@@ -99,10 +95,10 @@ const Project = () => {
             start: "top 70%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     },
-    { scope: sectionRef, revertOnUpdate: true }
+    { scope: sectionRef, revertOnUpdate: true },
   );
 
   return (
