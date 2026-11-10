@@ -11,7 +11,8 @@ import Testimonial from "@/app/components/Testimonial/Testimonial";
 import Contact from "@/app/components/Contact/Contact";
 import Footer from "@/app/components/Footer/Footer";
 import SmoothScroll from "@/app/components/Motion/SmoothScroll";
-import { useCallback, useState } from "react";
+import { ScrollTrigger } from "@/app/lib/motion";
+import { useCallback, useEffect, useState } from "react";
 
 export default function Home() {
   const [showLoader, setShowLoader] = useState(true);
@@ -24,6 +25,14 @@ export default function Home() {
   const handleLoaderComplete = useCallback(() => {
     setShowLoader(false);
   }, []);
+
+  useEffect(() => {
+    if (showLoader || !showSite) return;
+    const id = requestAnimationFrame(() => {
+      ScrollTrigger.refresh();
+    });
+    return () => cancelAnimationFrame(id);
+  }, [showLoader, showSite]);
 
   return (
     <>

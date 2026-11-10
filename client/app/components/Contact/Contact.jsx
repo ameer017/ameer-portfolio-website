@@ -3,11 +3,7 @@
 import React, { useRef, useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
-import {
-  gsap,
-  registerMotion,
-  prefersReducedMotion,
-} from "@/app/lib/motion";
+import { revealOnScroll } from "@/app/lib/motion";
 
 const Contact = () => {
   const sectionRef = useRef(null);
@@ -23,26 +19,10 @@ const Contact = () => {
 
   useGSAP(
     () => {
-      registerMotion();
-      if (prefersReducedMotion() || !sectionRef.current) return;
-
-      gsap.fromTo(
-        ".contact-reveal",
-        { y: 80, autoAlpha: 0, scale: 0.96 },
-        {
-          y: 0,
-          autoAlpha: 1,
-          scale: 1,
-          duration: 1,
-          stagger: 0.14,
-          ease: "expo.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 75%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
+      revealOnScroll(sectionRef.current, ".contact-reveal", {
+        stagger: 0.14,
+        y: 48,
+      });
     },
     { scope: sectionRef, revertOnUpdate: true }
   );
@@ -94,7 +74,7 @@ const Contact = () => {
   return (
     <main
       ref={sectionRef}
-      className="relative px-6 md:px-10 pt-24 pb-24 bg-black border-t border-white/10"
+      className="relative px-6 md:px-10 py-28 md:py-36 bg-black border-t border-white/10 section-wash"
       id="con"
     >
       <div className="max-w-6xl mx-auto">
